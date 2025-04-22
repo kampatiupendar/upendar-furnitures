@@ -20,15 +20,12 @@
       line-height: 1.6;
     }
 
-    /* Navbar */
     .navbar {
       display: flex;
       flex-direction: column;
       align-items: center;
       background-color: #fff;
-      color: #212121;
       padding: 15px 30px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .logo {
@@ -42,7 +39,6 @@
 
     .logo img {
       height: 60px;
-      width: auto;
       margin-right: 10px;
     }
 
@@ -52,6 +48,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      padding-right: 40px;
     }
 
     .nav-links li a {
@@ -70,19 +67,15 @@
       .navbar {
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
       }
-
       .logo {
         margin-bottom: 0;
       }
     }
 
-    /* Hero Section */
     .hero {
       height: 100vh;
-      background-size: cover;
-      background-position: center;
+      background: url('https://i.pinimg.com/736x/c2/5a/c6/c25ac6bd2ef752832aea01beae8a77ab.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -112,13 +105,8 @@
       animation: fadeInText 1s ease forwards;
     }
 
-    .hero h1 {
-      animation-delay: 0.5s;
-    }
-
-    .hero p {
-      animation-delay: 1.5s;
-    }
+    .hero h1 { animation-delay: 0.3s; }
+    .hero p { animation-delay: 0.4s; }
 
     .explore-btn {
       margin-top: 25px;
@@ -131,7 +119,7 @@
       cursor: pointer;
       transition: background-color 0.3s;
       animation: fadeInText 1s ease forwards;
-      animation-delay: 2.5s;
+      animation-delay: 0.5s;
       opacity: 0;
     }
 
@@ -150,15 +138,101 @@
       }
     }
 
-    /* Content Section */
+    .bestsellers {
+      background-color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bestsellers h2 {
+      font-size: 2rem;
+      color: #B71C1C;
+      margin-bottom: 30px;
+    }
+
+    .bestseller-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .bestseller-item {
+      width: 200px;
+    }
+
+    .bestseller-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .bestseller-item p {
+      margin-top: 10px;
+      font-weight: 600;
+      color: #212121;
+    }
+
+    .mobile-bestseller, .mobile-buttons {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .bestseller-grid {
+        display: none;
+      }
+
+      .mobile-bestseller {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        min-height: 320px;
+      }
+
+      .mobile-bestseller img {
+        width: 80%;
+        max-width: 300px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        position: absolute;
+        opacity: 0;
+      }
+
+      .mobile-bestseller img.active {
+        opacity: 1;
+        position: relative;
+      }
+
+      .mobile-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 200px;
+      }
+
+      .mobile-buttons button {
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: #B71C1C;
+        cursor: pointer;
+      }
+    }
+
     .content {
       padding: 60px 30px;
       background-color: #FBE9E7;
-      text-align: left;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 0;
     }
 
     .content-text {
@@ -190,46 +264,136 @@
       max-height: 250px;
     }
 
-    /* Footer */
     footer {
       background-color: #212121;
       color: #fff;
       text-align: center;
       padding: 20px 0;
-      margin-top: auto;
     }
   </style>
+  <script>
+    let mobileImages = [
+      "https://static.vecteezy.com/system/resources/previews/047/828/943/non_2x/vintage-wooden-bed-on-transparent-background-png.png",
+      "https://static.vecteezy.com/system/resources/previews/053/783/442/non_2x/wooden-frame-sofa-on-transparent-background-free-png.png",
+      "https://media.istockphoto.com/id/471875503/photo/dining-furniture.jpg?s=612x612&w=0&k=20&c=nilS57A0V0ZMaxdzhPRNzjvMOQvX6yGTu1lCR5iu6cc=",
+      "rty-removebg-preview.png"
+    ];
+    let currentImage = 0;
+    function showImage(index) {
+      const img = document.getElementById("mobileImg");
+      img.classList.remove("active");
+      setTimeout(() => {
+        img.src = mobileImages[index];
+        img.classList.add("active");
+      }, 200);
+    }
+    function prevImage() {
+      currentImage = (currentImage - 1 + mobileImages.length) % mobileImages.length;
+      showImage(currentImage);
+    }
+    function nextImage() {
+      currentImage = (currentImage + 1) % mobileImages.length;
+      showImage(currentImage);
+    }
+    window.onload = () => {
+      const img = document.getElementById("mobileImg");
+      img.src = mobileImages[currentImage];
+      img.classList.add("active");
+    };
+   
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function handleGesture() {
+    if (touchEndX < touchStartX - 50) {
+      nextImage();
+    }
+    if (touchEndX > touchStartX + 50) {
+      prevImage();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileImg = document.getElementById("mobileImg");
+
+    mobileImg.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    mobileImg.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleGesture();
+    });
+  });
+
+
+  </script>
 </head>
+
 <body>
-  <nav class="navbar">
+  <header class="navbar">
     <div class="logo">
-      <img src="https://static.vecteezy.com/system/resources/previews/044/845/312/non_2x/woodwork-carpentry-logo-design-template-vintage-style-vector.jpg" alt="Logo">
+      <img src="lovv-removebg-preview.png" alt="Logo">
       Upendar Furnitures
     </div>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-  </nav>
-  <header class="hero" style="background-image: url('back.jpg');">
+  </header>
+
+  <section class="hero">
     <div class="hero-content">
       <h1>Welcome to Upendar Furnitures</h1>
       <p>Crafting Elegance & Comfort for Every Home</p>
+    
       <a href="gallery.html"><button class="explore-btn">Explore Gallery</button></a>
     </div>
-  </header>
+  </section>
+
+  <section class="bestsellers">
+    <h2>Best Sellers</h2>
+    <div class="bestseller-grid">
+      <div class="bestseller-item">
+        <img src="https://static.vecteezy.com/system/resources/previews/047/828/943/non_2x/vintage-wooden-bed-on-transparent-background-png.png" alt="Bed">
+        <p>Wooden Bed</p>
+      </div>
+      <div class="bestseller-item">
+        <img src="https://static.vecteezy.com/system/resources/previews/053/783/442/non_2x/wooden-frame-sofa-on-transparent-background-free-png.png" alt="Sofa">
+        <p>Frame Sofa</p>
+      </div>
+      <div class="bestseller-item">
+        <img src="https://media.istockphoto.com/id/471875503/photo/dining-furniture.jpg?s=612x612&w=0&k=20&c=nilS57A0V0ZMaxdzhPRNzjvMOQvX6yGTu1lCR5iu6cc=" alt="Dining">
+        <p>Dining Table</p>
+      </div>
+      <div class="bestseller-item">
+        <img src="rty-removebg-preview.png" alt="Cabinet">
+        <p>Cabinet</p>
+      </div>
+    </div>
+
+    <div class="mobile-bestseller">
+      <img id="mobileImg" src="" alt="Mobile Bestseller">
+      <div class="mobile-buttons">
+        <button onclick="prevImage()">❮</button>
+        <button onclick="nextImage()">❯</button>
+      </div>
+    </div>
+  </section>
+
   <section class="content">
     <div class="content-text">
       <h2>Quality Woodwork, Timeless Design</h2>
       <p>Explore our range of premium furniture, expertly crafted to blend beauty with functionality. From living room masterpieces to elegant bedroom designs, we turn wood into art.</p>
     </div>
     <div class="content-image">
-      <img src="lovv-removebg-preview.png" alt="Woodwork Logo">
+      <img src="lovv-removebg-preview.png" alt="Craftsmanship">
     </div>
   </section>
+
   <footer>
     <p>&copy; 2025 Upendar Furnitures. All rights reserved.</p>
   </footer>
