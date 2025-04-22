@@ -1,0 +1,179 @@
+<!-- Bedroom Furniture Detail Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bedroom Furniture - Upendar Furnitures</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefefe;
+      color: #212121;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #212121;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+    .navbar a:hover {
+      color: #B71C1C;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .hero {
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero h5 {
+      font-size: 1rem;
+      font-weight: normal;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+    .hero h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      color: #B71C1C;
+    }
+    .gallery {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .gallery-item {
+      flex: 0 0 auto;
+      width: 180px;
+      min-width: 180px;
+      text-align: center;
+    }
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .gallery caption {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #555;
+      display: block;
+    }
+    .description {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.8;
+      margin-top: 2rem;
+    }
+    .back-btn {
+      position: absolute;
+      top: 80px;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #212121;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .back-btn i {
+      margin-right: 8px;
+    }
+    footer {
+      text-align: center;
+      background: #212121;
+      color: #fff;
+      padding: 20px;
+      margin-top: 3rem;
+    }
+    @media screen and (max-width: 768px) {
+      .gallery {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .gallery-item {
+        flex: 0 0 auto;
+        width: 180px;
+        min-width: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="services.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Services</a>
+
+  <div class="navbar">
+    <div class="logo"><strong>Upendar Furnitures</strong></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1>Bedroom Furniture</h1>
+      <h5>Relaxation meets design in every detail.</h5>
+      <h2>Best Sellers</h2>
+    </div>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="https://images.woodenstreet.de/image/data/bedroom-furniture/wardrobes/auric/updated/Auric-Wardrobe-Without-Mirror--Walnut-Finish--01.jpg" alt="Wardrobe">
+        <caption>Wardrobe</caption>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.woodenstreet.de/image/data/bedroom-furniture/bed-without-storage/carlton/updated/Carlton-Bed-without-Storage--Honey--front-1.jpg" alt="King Bed">
+        <caption>King Bed</caption>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.woodenstreet.de/image/data/dressing-table/valus/updated/Valus-Dressing-Table--Honey--open-1.jpg" alt="Dressing Table">
+        <caption>Dressing Table</caption>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.woodenstreet.de/image/data/bedside-tables/berlin/updated/Berlin-Bedside-Table--Walnut--closed-1.jpg" alt="Bedside Table">
+        <caption>Bedside Table</caption>
+      </div>
+    </div>
+
+    <div class="description">
+      <p>
+        Discover bedroom furniture that blends tranquility with timeless style. Our range includes elegant beds, spacious wardrobes,
+        compact bedside tables, and sleek dressing units. Whether it's minimalist or luxurious, we craft pieces that complete your sanctuary.
+      </p>
+      <p>
+        Made from the finest wood, each item is thoughtfully designed for comfort, storage, and beauty. Create your perfect bedroom space
+        with Upendar Furnitures — where comfort meets craftsmanship.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Upendar Furnitures. All rights reserved.
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>

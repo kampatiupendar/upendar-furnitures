@@ -1,0 +1,179 @@
+<!-- Dining Furniture Detail Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dining Furniture - Upendar Furnitures</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefefe;
+      color: #212121;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #212121;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+    .navbar a:hover {
+      color: #B71C1C;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .hero {
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      padding-top: 15px;
+    }
+    .hero h5 {
+      font-size: 1rem;
+      font-weight: normal;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+    .hero h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      color: #B71C1C;
+    }
+    .gallery {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .gallery-item {
+      flex: 0 0 auto;
+      width: 180px;
+      min-width: 180px;
+      text-align: center;
+    }
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      
+    }
+    .gallery caption {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #555;
+      display: block;
+    }
+    .description {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.8;
+      margin-top: 2rem;
+    }
+    .back-btn {
+      position: absolute;
+      top: 80px;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #212121;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding-bottom: 80px;
+    }
+    .back-btn i {
+      margin-right: 8px;
+    }
+    footer {
+      text-align: center;
+      background: #212121;
+      color: #fff;
+      padding: 20px;
+      margin-top: 3rem;
+    }
+    @media screen and (max-width: 768px) {
+      .gallery {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .gallery-item {
+        flex: 0 0 auto;
+        width: 180px;
+        min-width: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="services.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+
+  <div class="navbar">
+    <div class="logo"><strong>Upendar Furnitures</strong></div>
+    <div>
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1>Dining Furniture</h1>
+      <h5>Elegant and functional pieces for every meal.</h5>
+      <h2>Best Sellers</h2>
+    </div>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="https://png.pngtree.com/png-vector/20231123/ourmid/pngtree-dining-table-and-chairs-isolated-dining-table-png-image_10658977.png" alt="Dining Table">
+        <caption>Dining Table</caption>
+      </div>
+      <div class="gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh6rQfwhstkFvGm8UsvYjIZLX2p6NdmgWT0A&s" alt="Dining Chair">
+        <caption>Dining Chair</caption>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.nilamburfurniture.com/uploads/product_photo/20210620103229.png" alt="Crockery Cabinet">
+        <caption>Crockery Cabinet</caption>
+      </div>
+      <div class="gallery-item">
+        <img src="https://s.alicdn.com/@sc04/kf/Hac9e11b91a9544159243f980585fee11T.jpg_720x720q50.jpg" alt="Bar Cabinet">
+        <caption>Bar Cabinet</caption>
+      </div>
+    </div>
+
+    <div class="description">
+      <p>
+        Upgrade your dining experience with our elegant furniture range. From spacious dining tables to comfortable chairs and stylish cabinets,
+        we offer handcrafted pieces that bring warmth and function to your meals.
+      </p>
+      <p>
+        Perfect for family dinners or festive gatherings, our designs fit both modern and classic interiors. Let Upendar Furnitures enhance your dining space.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Upendar Furnitures. All rights reserved.
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>
