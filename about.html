@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Upendar Furnitures</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #E0E0E0;
+      color: #212121;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      color: #212121;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #212121;
+      margin-bottom: 10px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: #212121;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #B71C1C;
+    }
+
+    @media (min-width: 769px) {
+      .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        margin-bottom: 0;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+   
+    .about-section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .about-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .about-section p {
+      line-height: 1.6;
+      font-size: 16px;
+      color: #333;
+    }
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.gallery-section {
+  flex: 1;
+}
+.footer {
+  margin-top: auto;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://static.vecteezy.com/system/resources/previews/044/845/312/non_2x/woodwork-carpentry-logo-design-template-vintage-style-vector.jpg" alt="Logo">
+      Upendar Furnitures
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="about-section">
+    <h2>About Us</h2>
+    <p>
+      Welcome to <strong>Upendar Furnitures</strong>, where craftsmanship meets creativity. With over 20 years of experience in the furniture industry, we pride ourselves on delivering high-quality, handcrafted furniture that transforms your space into a true reflection of your style.
+    </p>
+    <p>
+      Every piece we create—from luxurious sofas to custom beds and stylish dining sets—is built with precision, passion, and premium materials. Whether you're furnishing your dream home or enhancing your workspace, our mission is to provide furniture solutions that combine aesthetics with functionality.
+    </p>
+    <p>
+      At Upendar Furnitures, customer satisfaction is our top priority. We work closely with each client to understand their vision and deliver results that exceed expectations. Join our growing family of happy clients and experience the timeless beauty of finely crafted furniture.
+    </p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Upendar Furnitures. All rights reserved.</p>
+  </footer>
+</body>
+</html>

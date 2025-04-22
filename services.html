@@ -1,0 +1,209 @@
+<!-- services.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - Upendar Furnitures</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dI+zGtM+Ad9W0kLGUt2KH8B4+xv6Z5Rh5c8FqRjEKavM9ZJ9BAmJYcbkpv1DzZKqEdq+0O2mccT2r7L3BDe+bQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #E0E0E0;
+      color: #212121;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      color: #212121;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #212121;
+      margin-bottom: 10px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: #212121;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #B71C1C;
+    }
+
+    @media (min-width: 769px) {
+      .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        margin-bottom: 0;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .services {
+      background-color: #fefefe;
+      padding-top: 3rem;
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .service-items {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .service {
+      background: #f9f9f9;
+      border-radius: 10px;
+      width: 250px;
+      margin: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .service:hover {
+      transform: translateY(-10px);
+    }
+
+    .service i {
+      font-size: 3rem;
+      color: #cc9966;
+      margin-bottom: 1rem;
+    }
+
+    .service h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    footer {
+      background-color: #212121;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://static.vecteezy.com/system/resources/previews/044/845/312/non_2x/woodwork-carpentry-logo-design-template-vintage-style-vector.jpg" alt="Logo">
+      Upendar Furnitures
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-items">
+      <div class="service">
+        <i class="fas fa-couch"></i>
+        <h3>Living Room</h3>
+        <p>Beautiful sofas, TV units, and center tables designed to elevate your living space.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-bed"></i>
+        <h3>Bedroom</h3>
+        <p>From beds to wardrobes, we create cozy and functional bedroom furniture.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-chair"></i>
+        <h3>Dining</h3>
+        <p>Elegant dining sets and storage options for memorable meals and gatherings.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-utensils"></i>
+        <h3>Kitchen</h3>
+        <p>Modular and custom kitchen units for functionality and modern style.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-briefcase"></i>
+        <h3>Office Furniture</h3>
+        <p>Stylish desks, chairs, and cabinets that suit both home and commercial offices.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-box"></i>
+        <h3>Storage Solutions</h3>
+        <p>Space-saving shelves, cupboards, and units tailored to your storage needs.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-tools"></i>
+        <h3>Custom Work</h3>
+        <p>We turn your ideas into reality with personalized and handcrafted woodwork.</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Upendar Furnitures. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+

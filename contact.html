@@ -1,0 +1,208 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Upendar Furnitures</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #E0E0E0;
+      color: #212121;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      color: #212121;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #212121;
+      margin-bottom: 10px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: #212121;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #B71C1C;
+    }
+
+    @media (min-width: 769px) {
+      .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        margin-bottom: 0;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .contact-section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+      flex: 1;
+    }
+
+    .contact-info {
+      margin-bottom: 40px;
+    }
+
+    .contact-info h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .info-item i {
+      font-size: 1.2rem;
+      margin-right: 10px;
+      color: #B71C1C;
+    }
+
+    .booking-form h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form input, form textarea, form select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    form button {
+      background-color: #B71C1C;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #8E1616;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #212121;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="https://static.vecteezy.com/system/resources/previews/044/845/312/non_2x/woodwork-carpentry-logo-design-template-vintage-style-vector.jpg" alt="logo" />
+      Upendar Furnitures
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a class="active" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-info">
+      <h2>Contact Details</h2>
+      <div class="info-item"><i class="fas fa-user"></i> Upendar (Owner)</div>
+      <div class="info-item"><i class="fas fa-phone"></i> +91-8096414441</div>
+      <div class="info-item"><i class="fas fa-envelope"></i> thilakteja9@gmail.com</div>
+      <div class="info-item"><i class="fas fa-map-marker-alt"></i>Chilkanagar road , Uppal , Hyderabad , 500036</div>
+      <div class="info-item"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM to 7:00 PM</div>
+    </div>
+
+    <div class="booking-form">
+      <h2>Book an Appointment</h2>
+      <form action="https://formspree.io/f/xdkeqaoo" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="tel" name="phone" placeholder="Your Phone Number" required />
+        <select name="service" required>
+          <option value="">Select Service Type</option>
+          <option value="Sofa">Sofa</option>
+          <option value="Beds">Beds</option>
+          <option value="Dining Tables">Dining Tables</option>
+          <option value="Tables">Tables</option>
+        </select>
+        <textarea name="message" rows="4" placeholder="Message or Booking Details"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Upendar Furnitures. All rights reserved.
+  </footer>
+</body>
+</html>

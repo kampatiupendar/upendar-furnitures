@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - Upendar Furnitures</title>
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #E0E0E0;
+      color: #212121;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      color: #212121;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #212121;
+      margin-bottom: 10px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: #212121;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #B71C1C;
+    }
+
+    @media (min-width: 769px) {
+      .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        margin-bottom: 0;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    
+    .gallery-section {
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 20px;
+    }
+    .main-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      padding-top: 30px;
+    }
+    .main-buttons button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #B71C1C;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .sub-buttons {
+      margin-top: 20px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .sub-buttons button {
+      margin: 5px 0;
+      padding: 8px 16px;
+      border: 1px solid #B71C1C;
+      background-color: white;
+      color: #B71C1C;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .image-grid {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .image-grid img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .image-grid img:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+      position: relative;
+    }
+    html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.gallery-section {
+  flex: 1;
+}
+.footer {
+  margin-top: auto;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://static.vecteezy.com/system/resources/previews/044/845/312/non_2x/woodwork-carpentry-logo-design-template-vintage-style-vector.jpg" alt="Logo">
+      Upendar Furnitures
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="gallery-section">
+    <h1>Our Categories</h1>
+    <div class="main-buttons">
+      <button onclick="toggleSub('sofa')">Sofa</button>
+      <button onclick="toggleSub('beds')">Beds</button>
+      <button onclick="toggleSub('dining')">Dining </button>
+      <button onclick="toggleSub('tables')">Tables</button>
+    </div>
+
+    <div id="sub-sofa" class="sub-buttons">
+      <button onclick="showImages('recliners')">Recliners</button>
+      <button onclick="showImages('sectionals')">Sectionals</button>
+      <button onclick="showImages('loveseats')">Loveseats</button>
+    </div>
+    <div id="sub-beds" class="sub-buttons">
+      <button onclick="showImages('kingbeds')">King Size</button>
+      <button onclick="showImages('bunkbeds')">Bunk Beds</button>
+      <button onclick="showImages('double')">Double cots</button>
+      
+    </div>
+    <div id="sub-dining" class="sub-buttons">
+      <button onclick="showImages('4seater')">4 Seater</button>
+      <button onclick="showImages('6seater')">6 Seater</button>
+    </div>
+    <div id="sub-tables" class="sub-buttons">
+      <button onclick="showImages('coffeetables')">Coffee Tables</button>
+      <button onclick="showImages('desktables')">Desk Tables</button>
+    </div>
+
+    <div id="image-container" class="image-grid"></div>
+  </section>
+
+  <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="Full View">
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Upendar Furnitures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const allSubs = document.querySelectorAll('.sub-buttons');
+    const imageContainer = document.getElementById('image-container');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    const images = {
+      recliners: [
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840'
+      ],
+      sectionals: [
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+      ],
+      loveseats: [
+        'https://m.media-amazon.com/images/I/81bfxmtweXL.jpg'
+      ],
+      kingbeds: [
+        'https://5.imimg.com/data5/SELLER/Default/2023/1/YY/HK/US/175963647/king-size-bed.jpg'
+      ],
+      bunkbeds: [
+        'https://www.hometown.in/guru-img/287x217/childrens-bunk-bed-3.jpg'
+      ],
+      '4seater': [
+        'https://m.media-amazon.com/images/I/61GTk34EygL.jpg'
+      ],
+      '6seater': [
+        'https://www.ulcdn.net/images/products/141329/product/Orlando_6_seater_dining_set_LP.jpg'
+      ],
+      coffeetables: [
+        'https://5.imimg.com/data5/QT/OX/GLADMIN-14418964/designer-center-table.jpg'
+      ],
+      desktables: [
+        'https://ii1.pepperfry.com/media/catalog/product/s/e/494x544/sean-study-table-in-provincial-teak-finish-by-amberville-sean-study-table-in-provincial-teak-finish-by-a-w45rxt.jpg'
+      ]
+    };
+
+    function toggleSub(id) {
+      allSubs.forEach(sub => sub.style.display = 'none');
+      document.getElementById('sub-' + id).style.display = 'flex';
+      imageContainer.style.display = 'none';
+    }
+
+    function showImages(key) {
+      const imgs = images[key] || [];
+      imageContainer.innerHTML = '';
+      imgs.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.onclick = () => {
+          lightbox.style.display = 'flex';
+          lightboxImg.src = src;
+        };
+        imageContainer.appendChild(img);
+      });
+      imageContainer.style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
