@@ -23,10 +23,12 @@
     .navbar {
       display: flex;
       flex-direction: column;
-      align-items: center;
       background-color: #fff;
       color: #212121;
-      padding: 15px 30px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-top: 20px;
+  
     }
 
     .logo {
@@ -43,27 +45,31 @@
       width: auto;
       margin-right: 10px;
     }
-
     .nav-links {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      padding-top: 16px;
+      padding-right: 15px;
+      
     }
 
+  
     .nav-links li a {
       color: #212121;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
-
     .nav-links li a:hover,
     .nav-links li a.active {
       color: #B71C1C;
     }
 
+   
+      
     @media (min-width: 769px) {
       .navbar {
         flex-direction: row;
@@ -72,11 +78,12 @@
       .logo {
         margin-bottom: 0;
       }
+     
     }
 
     .hero {
       height: 100vh;
-      background: url('https://i.pinimg.com/736x/c2/5a/c6/c25ac6bd2ef752832aea01beae8a77ab.jpg') center/cover no-repeat;
+      background: url('https://ak1.ostkcdn.com/images/products/is/images/direct/ec25a3733f277753dd99d3978002134a7512cbaa/Modular-Sectional-Sofa-Couch-with-Ottoman-for-Living-Room-Set.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -184,45 +191,45 @@
       .bestseller-grid {
         display: none;
       }
-
       .mobile-bestseller {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        z-index: 1;
-        min-height: 320px;
-      }
+  position: relative;
+  height: 320px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
 
-      .mobile-bestseller img {
-        width: 80%;
-        max-width: 300px;
-        border-radius: 8px;
-        margin-bottom: 10px;
-        transition: transform 0.4s ease, opacity 0.4s ease;
-        position: absolute;
-        opacity: 0;
-      }
+.mobile-bestseller img {
+  max-width: 90%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
 
-      .mobile-bestseller img.active {
-        opacity: 1;
-        position: relative;
-      }
+.mobile-bestseller img.active {
+  opacity: 1;
+}
 
-      .mobile-buttons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        margin-top: 200px;
-      }
+.mobile-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 10px;
+}
 
-      .mobile-buttons button {
-        background: none;
-        border: none;
-        font-size: 1.8rem;
-        color: #B71C1C;
-        cursor: pointer;
-      }
+.dot-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
     }
 
     .content {
@@ -271,37 +278,108 @@
       text-align: center;
       padding: 20px 0;
     }
+    .dot-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 310px;
+  gap: 10px;
+}
+
+.dot-indicators .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s;
+}
+
+.dot-indicators .dot.active {
+  background-color: #B71C1C;
+}
+
+
   </style>
-  <script>
-    let mobileImages = [
-      "https://static.vecteezy.com/system/resources/previews/047/828/943/non_2x/vintage-wooden-bed-on-transparent-background-png.png",
-      "https://static.vecteezy.com/system/resources/previews/053/783/442/non_2x/wooden-frame-sofa-on-transparent-background-free-png.png",
-      "https://media.istockphoto.com/id/471875503/photo/dining-furniture.jpg?s=612x612&w=0&k=20&c=nilS57A0V0ZMaxdzhPRNzjvMOQvX6yGTu1lCR5iu6cc=",
-      "rty-removebg-preview.png"
-    ];
-    let currentImage = 0;
-    function showImage(index) {
-      const img = document.getElementById("mobileImg");
-      img.classList.remove("active");
-      setTimeout(() => {
-        img.src = mobileImages[index];
-        img.classList.add("active");
-      }, 200);
-    }
-    function prevImage() {
-      currentImage = (currentImage - 1 + mobileImages.length) % mobileImages.length;
-      showImage(currentImage);
-    }
-    function nextImage() {
-      currentImage = (currentImage + 1) % mobileImages.length;
-      showImage(currentImage);
-    }
-    window.onload = () => {
-      const img = document.getElementById("mobileImg");
-      img.src = mobileImages[currentImage];
+
+<script>
+  const mobileImages = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR7iQboSRcpy_Y2bDN0rOhcl75sqirla-ftw&s",
+    "https://static.vecteezy.com/system/resources/previews/053/783/442/non_2x/wooden-frame-sofa-on-transparent-background-free-png.png",
+    "https://media.istockphoto.com/id/471875503/photo/dining-furniture.jpg?s=612x612&w=0&k=20&c=nilS57A0V0ZMaxdzhPRNzjvMOQvX6yGTu1lCR5iu6cc=",
+    "rty-removebg-preview.png",
+    "rty-removebg-preview.png"
+  ];
+
+  let currentImage = 0;
+  let autoSlideInterval;
+  let userInteracted = false;
+
+  function showImage(index) {
+    const img = document.getElementById("mobileImg");
+    img.classList.remove("active");
+    setTimeout(() => {
+      img.src = mobileImages[index];
       img.classList.add("active");
-    };
-   
+      updateDots();
+    }, 200);
+  }
+
+  function prevImage() {
+    currentImage = (currentImage - 1 + mobileImages.length) % mobileImages.length;
+    showImage(currentImage);
+    stopAutoSlide();
+  }
+
+  function nextImage() {
+    currentImage = (currentImage + 1) % mobileImages.length;
+    showImage(currentImage);
+    stopAutoSlide();
+  }
+
+  function createDots() {
+    const dotContainer = document.getElementById("dotIndicators");
+    dotContainer.innerHTML = "";
+    mobileImages.forEach((_, i) => {
+      const dot = document.createElement("div");
+      dot.classList.add("dot");
+      if (i === currentImage) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        currentImage = i;
+        showImage(currentImage);
+        stopAutoSlide();
+      });
+      dotContainer.appendChild(dot);
+    });
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentImage);
+    });
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      if (!userInteracted) {
+        currentImage = (currentImage + 1) % mobileImages.length;
+        showImage(currentImage);
+      }
+    }, 2000); // Image changes every 1 second
+  }
+
+  function stopAutoSlide() {
+    userInteracted = true;
+    clearInterval(autoSlideInterval);
+  }
+
+  window.onload = () => {
+    const img = document.getElementById("mobileImg");
+    img.src = mobileImages[currentImage];
+    img.classList.add("active");
+    createDots();
+    startAutoSlide();
+  };
+
   let touchStartX = 0;
   let touchEndX = 0;
 
@@ -324,11 +402,13 @@
     mobileImg.addEventListener("touchend", (e) => {
       touchEndX = e.changedTouches[0].screenX;
       handleGesture();
+      stopAutoSlide();
     });
   });
+</script>
 
-
-  </script>
+    
+  
 </head>
 
 <body>
@@ -338,8 +418,8 @@
       Upendar Furnitures
     </div>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -359,7 +439,7 @@
     <h2>Best Sellers</h2>
     <div class="bestseller-grid">
       <div class="bestseller-item">
-        <img src="https://static.vecteezy.com/system/resources/previews/047/828/943/non_2x/vintage-wooden-bed-on-transparent-background-png.png" alt="Bed">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR7iQboSRcpy_Y2bDN0rOhcl75sqirla-ftw&s" alt="Bed">
         <p>Wooden Bed</p>
       </div>
       <div class="bestseller-item">
@@ -374,21 +454,25 @@
         <img src="rty-removebg-preview.png" alt="Cabinet">
         <p>Cabinet</p>
       </div>
+      <div class="bestseller-item">
+        <img src="rty-removebg-preview.png" alt="Cabinet">
+        <p>Cabinet</p>
+      </div>
+      
     </div>
 
     <div class="mobile-bestseller">
       <img id="mobileImg" src="" alt="Mobile Bestseller">
-      <div class="mobile-buttons">
-        <button onclick="prevImage()">❮</button>
-        <button onclick="nextImage()">❯</button>
-      </div>
+     
+      <div class="dot-indicators" id="dotIndicators"></div>
+
     </div>
   </section>
 
   <section class="content">
     <div class="content-text">
-      <h2>Quality Woodwork, Timeless Design</h2>
-      <p>Explore our range of premium furniture, expertly crafted to blend beauty with functionality. From living room masterpieces to elegant bedroom designs, we turn wood into art.</p>
+      <h2>WE LISTEN , WE DESIGN, YOU LOVE.</h2>
+      <p>We belive your home should be a reflection of you. We collaborate with clints to create functional and stylish spaces that tell their unique stories. Our passion brings your vision to life, resulting in beautiful and personalized furnitures you'll love.</p>
     </div>
     <div class="content-image">
       <img src="lovv-removebg-preview.png" alt="Craftsmanship">
