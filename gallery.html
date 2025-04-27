@@ -29,12 +29,14 @@
     .navbar {
       display: flex;
       flex-direction: column;
-      align-items: center;
       background-color: #fff;
       color: #212121;
-      padding: 15px 30px;
-      
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-top: 20px;
+  
     }
+
     .logo {
       display: flex;
       align-items: center;
@@ -43,6 +45,7 @@
       color: #212121;
       margin-bottom: 10px;
     }
+
     .logo img {
       height: 60px;
       width: auto;
@@ -54,8 +57,10 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      
+      padding-right: 10px;
+
     }
+
     .nav-links li a {
       color: #212121;
       text-decoration: none;
@@ -166,6 +171,18 @@
       background-color: #f0f0f0;
       margin-top: auto;
     }
+    .main-buttons button {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.main-buttons button.active {
+  transform: scale(1.2);
+  background-color: #8B0000; /* Slightly dark red highlight */
+  color: white;
+}
+
+
+
   </style>
 </head>
 
@@ -187,13 +204,15 @@
   </nav>
 
   <section class="gallery-section">
-    <h1>Our Categories</h1>
+    <h1>Our Catlog</h1>
     <div class="main-buttons">
-      <button onclick="toggleSub('sofa')">Sofa</button>
-      <button onclick="toggleSub('beds')">Beds</button>
-      <button onclick="toggleSub('dining')">Dining</button>
-      <button onclick="toggleSub('tables')">Tables</button>
+      <button id="btn-sofa" onclick="toggleSub('sofa')">Sofa</button>
+      <button id="btn-beds" onclick="toggleSub('beds')">Beds</button>
+      <button id="btn-dining" onclick="toggleSub('dining')">Dining</button>
+      <button id="btn-tables" onclick="toggleSub('tables')">Tables</button>
     </div>
+    
+    
 
     <div id="sub-sofa" class="sub-buttons" style="display: none;">
       <button onclick="showImages('recliners')">Recliners</button>
@@ -213,6 +232,8 @@
       <button onclick="showImages('coffeetables')">Coffee Tables</button>
       <button onclick="showImages('desktables')">Desk Tables</button>
     </div>
+    
+    
 
     <div id="image-container" class="image-grid"></div>
   </section>
@@ -232,7 +253,37 @@
     const lightboxImg = document.getElementById('lightbox-img');
 
     const images = {
-      recliners: ['https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840'],
+      recliners: ['https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840','https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://5.imimg.com/data5/SELLER/Default/2024/8/444107347/PU/TC/IS/46649564/wooden-dressing-table.jpg',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
+        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840'
+
+      ],
       sectionals: ['https://ii1.pepperfry.com/media/catalog/product/b/i/494x544/bingo-fabric-3-seater-sofa-in-grey-colour-bingo-fabric-3-seater-sofa-in-grey-colour-qvofnh.jpg'],
       loveseats: ['https://ouchcart.com/cdn/shop/products/Fuhr_Tufted_Armless_Chaise_Lounge.jpg?v=1721367554'],
       kingbeds: ['https://www.hometown.in/cdn/shop/files/1_613f5737-9813-438e-ab54-94fec38f8402.jpg?v=1744375829'],
@@ -264,6 +315,34 @@
       });
       imageContainer.style.display = 'flex';
     }
+
+    
+window.onload = function() {
+  const params = new URLSearchParams(window.location.search);
+  const section = params.get('section');
+  
+  if (section) {
+    toggleSub(section);
+  }
+}
+function toggleSub(id) {
+  allSubs.forEach(sub => sub.style.display = 'none');
+  imageContainer.innerHTML = '';
+
+  // Remove active from all buttons
+  document.querySelectorAll('.main-buttons button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  // Add active to clicked button
+  const activeBtn = document.getElementById('btn-' + id);
+  if (activeBtn) {
+    activeBtn.classList.add('active');
+  }
+
+  document.getElementById('sub-' + id).style.display = 'flex';
+}
+
   </script>
 </body>
 </html>
