@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home - Upendar Furnitures</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    * {
+
+* {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -28,7 +30,6 @@
       padding-bottom: 20px;
       padding-left: 20px;
       padding-top: 20px;
-  
     }
 
     .logo {
@@ -45,6 +46,7 @@
       width: auto;
       margin-right: 10px;
     }
+
     .nav-links {
       list-style: none;
       display: flex;
@@ -53,23 +55,20 @@
       gap: 20px;
       padding-top: 16px;
       padding-right: 15px;
-      
     }
 
-  
     .nav-links li a {
       color: #212121;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
+
     .nav-links li a:hover,
     .nav-links li a.active {
       color: #B71C1C;
     }
 
-   
-      
     @media (min-width: 769px) {
       .navbar {
         flex-direction: row;
@@ -78,34 +77,42 @@
       .logo {
         margin-bottom: 0;
       }
-     
     }
 
+    /* Hero Section */
     .hero {
       height: 100vh;
-      background: url('https://ak1.ostkcdn.com/images/products/is/images/direct/ec25a3733f277753dd99d3978002134a7512cbaa/Modular-Sectional-Sofa-Couch-with-Ottoman-for-Living-Room-Set.jpg') center/cover no-repeat;
-      display: flex;
+      background: url('https://img.freepik.com/free-psd/retro-living-room-interior_53876-109286.jpg') center/cover no-repeat;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: #fff;
       position: relative;
     }
+    /* Default background for desktop */
+.hero {
+  background: url('https://i.pinimg.com/736x/e8/fa/84/e8fa84b78d4a369808bfb16f0ad27163.jpg') center/cover no-repeat;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  /* Mobile background */
+  .hero {
+    background: url('https://ouchcart.com/cdn/shop/files/cc13d5a6404a8aaa010c295be4a1b700_600x_508d2a29-431a-4247-98c2-97bfefb11c01.webp?v=1721402987') center/cover no-repeat;
+  }
+}
+
+    .hero-content{
+      padding-top: 150px;
+    }
 
     .hero::after {
-      content: "";
       position: absolute;
       inset: 0;
       background: rgba(33, 33, 33, 0.4);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      animation: fadeInUp 2s ease-in-out;
-      transform: translateY(-50px);
-      padding: 0 20px;
     }
 
     .hero h1, .hero p {
@@ -145,13 +152,13 @@
         transform: translateY(20px);
       }
     }
-
     .bestsellers {
       background-color: #fff;
       text-align: center;
       padding: 50px 20px;
       position: relative;
       z-index: 1;
+      padding-bottom: 80px;
     }
 
     .bestsellers h2 {
@@ -159,13 +166,13 @@
       color: #B71C1C;
       margin-bottom: 30px;
     }
-
     .bestseller-grid {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+  display: flex;
+  flex-wrap: nowrap; /* NO WRAPPING! */
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
 
     .bestseller-item {
       width: 200px;
@@ -181,10 +188,6 @@
       margin-top: 10px;
       font-weight: 600;
       color: #212121;
-    }
-
-    .mobile-bestseller, .mobile-buttons {
-      display: none;
     }
 
     @media (max-width: 768px) {
@@ -215,26 +218,16 @@
 .mobile-bestseller img.active {
   opacity: 1;
 }
-
-.mobile-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-bottom: 10px;
-}
-
 .dot-indicators {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
+}
 
-    }
-
-    .content {
+.content {
       padding: 60px 30px;
-      background-color: #FBE9E7;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -296,16 +289,119 @@
 .dot-indicators .dot.active {
   background-color: #B71C1C;
 }
+.bestseller-container {
+  overflow-x: hidden; /* Hide scrollbars, but allow internal movement */
+  width: 100%;
+  position: relative;
+}
+
+.bestseller-grid {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+.bestseller-item {
+  min-width: 200px;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.prev-btn, .next-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-btn i, .next-btn i {
+  color: #B71C1C;
+  font-size: 1.5rem; /* Size of the arrow */
+  transition: transform 0.3s;
+  padding-top: 30px;
+}
+
+.prev-btn i:hover, .next-btn i:hover {
+  transform: scale(1.3);
+}
+.search-bar {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px solid #B71C1C;
+  font-size: 1rem;
+}
+
+.search-bar::placeholder {
+  color: #B71C1C;
+}
+.search-container {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.search-bar {
+  width: 250px;
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px solid #a9a8a8;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #a01717;
+}
+.main-buttons button.active {
+  transform: scale(1.1);
+  background-color: #8B0000; /* darker red for highlight */
+}
 
 
+
+@media (max-width: 768px) {
+  .bestseller-container, .next-btn {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .bestseller-container, 
+  .button-container {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-bestseller {
+    display: none;
+  }
+}
   </style>
 
 <script>
   const mobileImages = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR7iQboSRcpy_Y2bDN0rOhcl75sqirla-ftw&s",
-    "https://static.vecteezy.com/system/resources/previews/053/783/442/non_2x/wooden-frame-sofa-on-transparent-background-free-png.png",
-    "https://media.istockphoto.com/id/471875503/photo/dining-furniture.jpg?s=612x612&w=0&k=20&c=nilS57A0V0ZMaxdzhPRNzjvMOQvX6yGTu1lCR5iu6cc=",
-    "rty-removebg-preview.png",
+    "https://m.media-amazon.com/images/I/61KQzJTFTpL.jpg",
+    "https://m.media-amazon.com/images/I/71CtHFI8ZLL.jpg",
+    "https://woodstage.in/wp-content/uploads/2021/11/main-33.jpg",
+    "https://www.themaark.com/image/cache/catalog/MAARK%20PLAIN%20DIWAN%20RF/interior-1000x1000.jpg",
     "rty-removebg-preview.png"
   ];
 
@@ -405,18 +501,86 @@
       stopAutoSlide();
     });
   });
-</script>
+  
+  let scrollAmount = 0;
 
-    
+function scrollNext() {
+  const container = document.getElementById("bestsellerGrid");
+  const itemWidth = container.querySelector(".bestseller-item").offsetWidth + 20; // + gap
+  scrollAmount += itemWidth;
+
+  if (scrollAmount > container.scrollWidth - container.clientWidth) {
+    scrollAmount = 0; // Reset to start
+  }
+
+  container.style.transform = `translateX(-${scrollAmount}px)`;
+  
+}
+function scrollPrev() {
+  const container = document.getElementById("bestsellerGrid");
+  const itemWidth = container.querySelector(".bestseller-item").offsetWidth + 20; // 20px gap
+  scrollAmount -= itemWidth;
+
+  if (scrollAmount < 0) {
+    scrollAmount = 0; // Start lo reach ayyindi ante, reset
+  }
+
+  container.style.transform = `translateX(-${scrollAmount}px)`;
+}
+
+function searchProduct() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const sections = {
+        sofa: 'sofa',
+        sofas: 'sofa',
+        bed: 'beds',
+        beds: 'beds',
+        dining: 'dining',
+        table: 'tables',
+        tables: 'tables',
+        wardrobe: 'wardrobe',  // example for future
+        // ikada vere categories add cheyyachu
+    };
+
+    for (const keyword in sections) {
+        if (input.includes(keyword)) {
+            window.location.href = `gallery.html?section=${sections[keyword]}`;
+            return;
+        }
+    }
+
+    alert("No results found!");
+}
+
+document.getElementById("searchInput").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchProduct();
+    }
+});
+
+window.addEventListener("DOMContentLoaded", function() {
+  const searchInput = document.getElementById("searchInput");
+  
+  searchInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      searchProduct();
+    }
+  });
+
+  // optional: Button click kuda already onclick vundhi, so adhi work chesthundi
+});
+</script>   
   
 </head>
-
 <body>
   <header class="navbar">
     <div class="logo">
       <img src="lovv-removebg-preview.png" alt="Logo">
       Upendar Furnitures
     </div>
+    
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -425,57 +589,85 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </header>
-
-  <section class="hero">
+  <section class="hero"> 
+    <div class="search-container">
+      <input type="text" id="searchInput" class="search-bar" placeholder="Search here...">
+      <button onclick="searchProduct()" class="search-btn"><i class="fa fa-search"></i></button>
+    </div>
     <div class="hero-content">
       <h1>Welcome to Upendar Furnitures</h1>
       <p>Crafting Elegance & Comfort for Every Home</p>
-    
       <a href="gallery.html"><button class="explore-btn">Explore Gallery</button></a>
     </div>
   </section>
-
   <section class="bestsellers">
     <h2>Best Sellers</h2>
-    <div class="bestseller-grid">
-      <div class="bestseller-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR7iQboSRcpy_Y2bDN0rOhcl75sqirla-ftw&s" alt="Bed">
-        <p>Wooden Bed</p>
+    <div class="bestseller-container">
+      <div class="bestseller-grid" id="bestsellerGrid">
+        <div class="bestseller-item">
+          <img src="https://m.media-amazon.com/images/I/61KQzJTFTpL.jpg" alt="pandiri mancham">
+          <p>pandiri mancham</p>
+        </div>
+        <div class="bestseller-item">
+          <img src="https://m.media-amazon.com/images/I/71CtHFI8ZLL.jpg" alt="Sofa">
+          <p> Sofa</p>
+        </div>
+        <div class="bestseller-item">
+          <img src="https://woodstage.in/wp-content/uploads/2021/11/main-33.jpg" alt="Dining">
+          <p>Dining Table</p>
+        </div>
+        <div class="bestseller-item">
+          <img src="https://m.media-amazon.com/images/I/71-ub4P6CKL._AC_UF1000,1000_QL80_.jpg" alt="Rocking chair">
+          <p>Rocking Chair</p>
+        </div>
+        <div class="bestseller-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRseZbmQ3daKdLHzFcEIxQBjIfuNOYEulJtdWu5u75OvFfnMGe5Zjw6Zg3GGMfRBYmK-fg&usqp=CAU" alt="Wardrobe">
+          <p>Wardrobe</p>
+        </div>
+        <div class="bestseller-item">
+          <img src="https://ouchcart.com/cdn/shop/products/71c_aXFUEWL._AC_SL1500_569x569_4bc2281b-7eac-4d60-846e-45368d7d8326.jpg?v=1721367909" alt="Chair">
+          <p>Chair</p>
+        </div>
+        <div class="bestseller-item">
+          <img src="https://5.imimg.com/data5/SELLER/Default/2023/11/362068819/SB/ZF/TU/200185738/wooden-carving-bed.jpg" alt="kingbed">
+          <p>King bed</p>
+        </div>
+        <div class="bestseller-item">
+          <img src="https://www.themaark.com/image/cache/catalog/MAARK%20PLAIN%20DIWAN%20RF/interior-1000x1000.jpg" alt="Wardrobe">
+          <p>Diwan cot</p>
+        </div>
+        <div class="bestseller-item">
+          <img src="https://5.imimg.com/data5/SELLER/Default/2024/8/444107347/PU/TC/IS/46649564/wooden-dressing-table.jpg" alt="Wardrobe">
+          <p>Dressing Table</p>
+        </div>
+        <div class="bestseller-item">
+          <img src="https://nodax.co.uk/cdn/shop/products/Wooden-bed-frame-Aurora-beds-online-drawer.jpg?v=1739693030" alt="Wardrobe">
+          <p>Wardrobe</p>
+        </div>
       </div>
-      <div class="bestseller-item">
-        <img src="https://static.vecteezy.com/system/resources/previews/053/783/442/non_2x/wooden-frame-sofa-on-transparent-background-free-png.png" alt="Sofa">
-        <p>Frame Sofa</p>
-      </div>
-      <div class="bestseller-item">
-        <img src="https://media.istockphoto.com/id/471875503/photo/dining-furniture.jpg?s=612x612&w=0&k=20&c=nilS57A0V0ZMaxdzhPRNzjvMOQvX6yGTu1lCR5iu6cc=" alt="Dining">
-        <p>Dining Table</p>
-      </div>
-      <div class="bestseller-item">
-        <img src="rty-removebg-preview.png" alt="Cabinet">
-        <p>Cabinet</p>
-      </div>
-      <div class="bestseller-item">
-        <img src="rty-removebg-preview.png" alt="Cabinet">
-        <p>Cabinet</p>
-      </div>
-      
     </div>
-
+    <div class="button-container">
+      <button class="prev-btn" onclick="scrollPrev()">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+    
+      <button class="next-btn" onclick="scrollNext()">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>  
     <div class="mobile-bestseller">
       <img id="mobileImg" src="" alt="Mobile Bestseller">
-     
       <div class="dot-indicators" id="dotIndicators"></div>
-
     </div>
   </section>
-
+  
   <section class="content">
     <div class="content-text">
       <h2>WE LISTEN , WE DESIGN, YOU LOVE.</h2>
       <p>We belive your home should be a reflection of you. We collaborate with clints to create functional and stylish spaces that tell their unique stories. Our passion brings your vision to life, resulting in beautiful and personalized furnitures you'll love.</p>
     </div>
     <div class="content-image">
-      <img src="lovv-removebg-preview.png" alt="Craftsmanship">
+      <img src="https://hauslondon.com/cdn/shop/products/SC_1770_v2_dominiquekieffer17189-02_lacqueredoak_grande.jpg?v=1652707959" alt="Craftsmanship">
     </div>
   </section>
 
