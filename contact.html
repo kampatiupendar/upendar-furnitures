@@ -24,11 +24,12 @@
     .navbar {
       display: flex;
       flex-direction: column;
-      align-items: center;
       background-color: #fff;
       color: #212121;
-      padding: 15px 30px;
-      
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-top: 20px;
+  
     }
 
     .logo {
@@ -45,13 +46,14 @@
       width: auto;
       margin-right: 10px;
     }
-
     .nav-links {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      padding-right: 10px;
+
     }
 
     .nav-links li a {
@@ -155,6 +157,31 @@
       background-color: #212121;
       color: #fff;
     }
+    /* WhatsApp Floating Button CSS */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe57;
+  transform: scale(1.1);
+}
+
   </style>
 </head>
 <body>
@@ -174,12 +201,17 @@
 
   <section class="contact-section">
     <div class="contact-info">
-      <h2>Contact Details</h2>
+      <h3>Contact Details</h3>
       <div class="info-item"><i class="fas fa-user"></i> Upendar (Owner)</div>
       <div class="info-item"><i class="fas fa-phone"></i> +91-8096414441</div>
       <div class="info-item"><i class="fas fa-envelope"></i> thilakteja9@gmail.com</div>
       <div class="info-item"><i class="fas fa-map-marker-alt"></i>Chilkanagar road , Uppal , Hyderabad , 500036</div>
       <div class="info-item"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM to 7:00 PM</div>
+      <div class="whatsapp">
+        <a href="https://wa.me/9177134674" class="whatsapp-float" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+       </div>
     </div>
 
     <div class="booking-form">
