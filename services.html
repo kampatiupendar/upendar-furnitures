@@ -1,47 +1,56 @@
-<!-- Services page with links to detailed service pages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services - Upendar Furnitures</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #E0E0E0;
       color: #212121;
-      line-height: 1.6;
     }
     .navbar {
-      display: flex; flex-direction: column; align-items: center;
-      background-color: #fff; padding: 15px 30px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      padding: 20px;
     }
     .logo {
-      display: flex; align-items: center;
-      font-size: 1.5rem; font-weight: bold; color: #212121;
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
       margin-bottom: 10px;
     }
-    .logo img { height: 60px; width: auto; margin-right: 10px; }
+    .logo img {
+      height: 60px;
+      margin-right: 10px;
+    }
     .nav-links {
-      list-style: none; display: flex; flex-wrap: wrap;
-      justify-content: center; gap: 20px;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
     .nav-links li a {
-      color: #212121; text-decoration: none;
-      font-weight: 500; transition: color 0.3s;
+      text-decoration: none;
+      color: #212121;
+      font-weight: 500;
+      transition: color 0.3s;
     }
     .nav-links li a:hover, .nav-links li a.active {
       color: #B71C1C;
     }
     @media (min-width: 769px) {
       .navbar { flex-direction: row; justify-content: space-between; align-items: center; }
-      .logo { margin-bottom: 0; }
     }
+
     .services {
-      background-color: #fefefe;
+      background: #fefefe;
       padding: 3rem 1rem;
     }
     .services h2 {
@@ -50,57 +59,121 @@
       margin-bottom: 2rem;
     }
     .service-items {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
     .service {
-      background: #f9f9f9;
+      position: relative;
+      overflow: hidden;
       border-radius: 10px;
-      width: 250px;
-      margin: 1rem;
-      padding: 2rem;
-      text-align: center;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    .service:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  background-color: #f0f0f0;
+    .service img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .service::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7); /* dark overlay */
+      transition: background 0.3s ease;
+    }
+    .service h3 {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .service h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background-color: #B71C1C;
+      transition: width 0.3s ease;
+    }
+    .service :hover::after {
+      width: 100%;
+    }
+
+    /* Image hover remove zoom */
+    .service img:hover {
+      transform: none;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 992px) {
+      .service-items {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .service-items {
+        grid-template-columns: 1fr;
+      }
+      .service img {
+        height: 200px;
+      }
+    }
+    .service h3 {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2;
 }
-.service:hover i {
-  transform: scale(1.1);
-  color: #B71C1C;
+
+.service h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #B71C1C;
+  transition: width 0.3s ease;
 }
-    .service i {
-  font-size: 3rem;
-  color: #cc9966;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+
+/* Desktop lo hover lo underline vastundi */
+@media (min-width: 768px) {
+  .service h3:hover::after {
+    width: 100%;
+  }
 }
-    .service h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .service p { font-size: 1rem; color: #666; }
-    .service a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-radius: 10px;
+
+/* Mobile lo underline always visible */
+@media (max-width: 767px) {
+  .service h3::after {
+    width: 100%;
+  }
 }
+
+
     footer {
-      background-color: #212121;
+      background: #212121;
       color: #fff;
       text-align: center;
       padding: 20px 0;
       margin-top: auto;
     }
-    .service-items a{
-      color: #212121;
-    }
   </style>
+
 </head>
 <body>
+
   <nav class="navbar">
     <div class="logo">
       <img src="https://static.vecteezy.com/system/resources/previews/044/845/312/non_2x/woodwork-carpentry-logo-design-template-vintage-style-vector.jpg" alt="Logo">
@@ -109,55 +182,54 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="services.html" class="active">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="gallery.html">Furniture</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="services.html" class="active">services</a></li>
     </ul>
   </nav>
 
   <section class="services" id="services">
-    <h2>Our Services</h2>
+    <h2>Furnitures</h2>
     <div class="service-items">
-      <a href="living-room.html"><div class="service">
-        <i class="fas fa-couch"></i>
+      <a href="living-room.html" class="service">
+        <img src="https://media.istockphoto.com/id/520536109/photo/contemporary-elegant-luxury-living-room.jpg?s=612x612&w=0&k=20&c=B2qVuu2PPjkw_CebnOicutAJdSa9K_z5IB4TnZWOTY4=" alt="Living Room Furniture">
         <h3>Living Room</h3>
-        <p>Beautiful sofas, TV units, and center tables designed to elevate your living space.</p>
-      </div></a>
-      <a href="bedroom-detail.html"><div class="service">
-        <i class="fas fa-bed"></i>
+      </a>
+      <a href="bedroom-detail.html" class="service">
+        <img src="https://smartwoodfurniture.com/wp-content/uploads/2023/12/Claire-Bedroom-Set.jpg" alt="Bedroom Furniture">
         <h3>Bedroom</h3>
-        <p>From beds to wardrobes, we create cozy and functional bedroom furniture.</p>
-      </div></a>
-      <a href="dining-detail.html"><div class="service">
-        <i class="fas fa-chair"></i>
+      </a>
+      <a href="dining-detail.html" class="service">
+        <img src="https://thetimberguy.com/cdn/shop/products/Buy-Stylish-Wooden-Dining-table-Chair-Bench-furniture-set-for-modern-Home-Choose-your-combination-2_600x.jpg?v=1739729339" alt="Dining Furniture">
         <h3>Dining</h3>
-        <p>Elegant dining sets and storage options for memorable meals and gatherings.</p>
-      </div></a>
-      <a href="kitchen-detail.html"><div class="service">
-        <i class="fas fa-table"></i>
+      </a>
+      <a href="kitchen-detail.html" class="service">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLiFFfH3-J-jEfjbGM6aL_jdDNbiEVKj3q0A&s" alt="Kitchen Furniture">
         <h3>Kitchen</h3>
-        <p>Modern kitchen furniture including tables and storage to fit your culinary space.</p>
-      </div></a>
-      <a href="office-detail.html"><div class="service">
-        <i class="fas fa-chair"></i><i class="fas fa-couch"></i>
+      </a>
+      <a href="office-detail.html" class="service">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLiFFfH3-J-jEfjbGM6aL_jdDNbiEVKj3q0A&s" alt="Office Furniture">
         <h3>Office Furniture</h3>
-        <p>Stylish desks, chairs, and cabinets that suit both home and commercial offices.</p>
-      </div></a>
-      <a href="storage-detail.html"><div class="service">
-        <i class="fas fa-box"></i>
+      </a>
+      <a href="storage-detail.html" class="service">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLiFFfH3-J-jEfjbGM6aL_jdDNbiEVKj3q0A&s" alt="Storage Solutions">
         <h3>Storage Solutions</h3>
-        <p>Space-saving shelves, cupboards, and units tailored to your storage needs.</p>
-      </div></a>
-      <a href="customwork-detail.html"><div class="service">
-        <i class="fas fa-tools"></i>
+      </a>
+      <a href="customwork-detail.html" class="service">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLiFFfH3-J-jEfjbGM6aL_jdDNbiEVKj3q0A&s" alt="Custom Work">
         <h3>Custom Work</h3>
-        <p>We turn your ideas into reality with personalized and handcrafted woodwork.</p>
-      </div></a>
+      </a>
+      <a href="customwork-detail.html" class="service">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLiFFfH3-J-jEfjbGM6aL_jdDNbiEVKj3q0A&s" alt="Custom Work">
+        <h3>Custom Work</h3>
+      </a>
     </div>
+    
   </section>
 
   <footer>
     <p>&copy; 2025 Upendar Furnitures. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
