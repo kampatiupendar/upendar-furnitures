@@ -7,6 +7,7 @@
   <title>Home - Upendar Furnitures</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="/favicon-32x32.png" type="lovv-removebg-preview">
   <style>
 
 * {
@@ -91,7 +92,7 @@
     }
     /* Default background for desktop */
 .hero {
-  background: url('https://t3.ftcdn.net/jpg/00/87/35/62/360_F_87356232_kiI7So2XoEMb681WCMesfI3jBnrLVBH6.jpg') center/cover no-repeat;
+  background: url('https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?cs=srgb&dl=pexels-pixabay-276528.jpg&fm=jpg') center/cover no-repeat;
   height: 83vh;
   color: #fff;
   position: relative;
@@ -100,7 +101,7 @@
 @media (max-width: 768px) {
   /* Mobile background */
   .hero {
-    background: url('https://t3.ftcdn.net/jpg/00/87/35/62/360_F_87356232_kiI7So2XoEMb681WCMesfI3jBnrLVBH6.jpg') center/cover no-repeat;
+    background: url('https://buildingandinteriors.com/wp-content/uploads/2022/07/the-house-of-things-wooden-sofa-set.webp') center/cover no-repeat;
     height: 78vh;
   }
   .hero-content a{
@@ -122,6 +123,9 @@
       opacity: 0;
       animation: fadeInText 1s ease forwards;
       color: white;
+      font-size: 20px;
+    }
+    .hero h1{
       font-size: 30px;
     }
 
@@ -162,7 +166,7 @@
       padding: 50px 20px;
       position: relative;
       z-index: 1;
-      padding-bottom: 80px;
+      padding-bottom: 30px;
     }
 
     .bestsellers h2 {
@@ -184,7 +188,7 @@
 
     .bestseller-item img {
       width: 100%;
-      height: auto;
+      height: 60%;
       border-radius: 8px;
     }
 
@@ -211,7 +215,7 @@
 
 .mobile-bestseller img {
   max-width: 90%;
-  max-height: 100%;
+  max-height: 80%;
   object-fit: contain;
   border-radius: 8px;
   position: absolute;
@@ -231,7 +235,7 @@
 }
 
 .content {
-      padding: 60px 30px;
+      padding: 10px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -333,7 +337,7 @@
 }
 
 .search-bar {
-  width: 60%;
+  width: 100%;
   max-width: 400px;
   padding: 10px;
   border-radius: 25px;
@@ -350,43 +354,32 @@
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 5px;
   z-index: 2;
-}
 
-.search-bar {
-  width: 250px;
-  padding: 10px;
-  border-radius: 25px;
-  border: 1px solid #a9a8a8;
-  font-size: 1rem;
-  background-color: transparent;
 }
-
 .search-btn {
   padding: 10px 20px;
   border: none;
   background-color: transparent;
-  color: white;
   border-radius: 25px;
   cursor: pointer;
-}
-
-.search-btn:hover {
-  background-color: #a9a8a8;
+  color: white;
 }
 .main-buttons button.active {
   transform: scale(1.1);
   background-color: #8B0000; /* darker red for highlight */
 }
-
-
+.navbar span{
+  color: #B71C1C;
+  padding-left: 5px;
+}
 
 @media (max-width: 768px) {
   .bestseller-container, .next-btn {
     display: none;
   }
 }
+
 @media (max-width: 768px) {
   .bestseller-container, 
   .button-container {
@@ -398,11 +391,14 @@
   .mobile-bestseller {
     display: none;
   }
-}
+
+    }
   </style>
 
 <script>
   const mobileImages = [
+    "https://m.media-amazon.com/images/I/81XQs+82MFL.jpg",
+    "https://5.imimg.com/data5/ANDROID/Default/2023/6/314307556/YS/HZ/WY/145611359/product-jpeg.jpg",
     "https://m.media-amazon.com/images/I/61KQzJTFTpL.jpg",
     "https://m.media-amazon.com/images/I/71CtHFI8ZLL.jpg",
     "https://woodstage.in/wp-content/uploads/2021/11/main-33.jpg",
@@ -542,7 +538,7 @@ function searchProduct() {
         beds: 'beds',
         dining: 'dining',
         table: 'tables',
-        tables: 'tables',
+        doors: 'doors',
         wardrobe: 'wardrobe',  // example for future
         // ikada vere categories add cheyyachu
     };
@@ -556,6 +552,7 @@ function searchProduct() {
 
     alert("No results found!");
 }
+
 
 document.getElementById("searchInput").addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
@@ -582,15 +579,15 @@ window.addEventListener("DOMContentLoaded", function() {
 <body>
   <header class="navbar">
     <div class="logo">
-      <img src="lovv-removebg-preview.png" alt="Logo">
-      Upendar Furnitures
+      <img src="Brown_Black_Simple_Sawmill_Logo-removebg-preview.png" alt="Logo">
+      Upendar  <span> Wood works</span>
     </div>
     
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Furniture</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </header>
@@ -601,15 +598,24 @@ window.addEventListener("DOMContentLoaded", function() {
     </form>
     
     <div class="hero-content">
-      <h1>Welcome to <br>Upendar Furnitures</h1>
+      <h1>Welcome to <br>Upendar Wood Works</h1>
       <p>Crafting Elegance & Comfort for Every Home</p>
-      <a href="gallery.html"><button class="explore-btn">Explore Gallery</button></a>
+      <a href="gallery.html"><button class="explore-btn">Explore Furniture</button></a>
     </div>
   </section>
   <section class="bestsellers">
     <h2>Best Sellers</h2>
     <div class="bestseller-container">
       <div class="bestseller-grid" id="bestsellerGrid">
+        <div class="bestseller-item">
+          <img src="https://m.media-amazon.com/images/I/81XQs+82MFL.jpg" alt="Wardrobe">
+          <p>Entery Door</p>
+        </div>
+        <div class="bestseller-item">
+          <img src="https://5.imimg.com/data5/SELLER/Default/2023/3/294616885/RY/BU/NK/49306713/wooden-door-frame.jpg" alt="Wardrobe">
+          <p>Entery Door</p>
+        </div>
+        
         <div class="bestseller-item">
           <img src="https://m.media-amazon.com/images/I/61KQzJTFTpL.jpg" alt="pandiri mancham">
           <p>pandiri mancham</p>
@@ -647,8 +653,8 @@ window.addEventListener("DOMContentLoaded", function() {
           <p>Dressing Table</p>
         </div>
         <div class="bestseller-item">
-          <img src="https://nodax.co.uk/cdn/shop/products/Wooden-bed-frame-Aurora-beds-online-drawer.jpg?v=1739693030" alt="Wardrobe">
-          <p>Wardrobe</p>
+          <img src="https://m.media-amazon.com/images/I/81XQs+82MFL.jpg" alt="Wardrobe">
+          <p>Entery Door</p>
         </div>
       </div>
     </div>
@@ -669,7 +675,7 @@ window.addEventListener("DOMContentLoaded", function() {
   
   <section class="content">
     <div class="content-text">
-      <h2>WE LISTEN , WE DESIGN, YOU LOVE.</h2>
+      <h2>WE LISTEN , WE DESIGN,  WE COMMITTED.</h2>
       <p>We belive your home should be a reflection of you. We collaborate with clints to create functional and stylish spaces that tell their unique stories. Our passion brings your vision to life, resulting in beautiful and personalized furnitures you'll love.</p>
     </div>
     <div class="content-image">
