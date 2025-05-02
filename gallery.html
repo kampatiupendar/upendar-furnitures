@@ -57,7 +57,6 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      padding-right: 10px;
 
     }
 
@@ -191,33 +190,30 @@
 <body>
   <nav class="navbar">
     <div class="logo">
-      <img src="https://static.vecteezy.com/system/resources/previews/044/845/312/non_2x/woodwork-carpentry-logo-design-template-vintage-style-vector.jpg" alt="Logo">
+      <img src="Brown_Black_Simple_Sawmill_Logo-removebg-preview.png" alt="Logo">
       Upendar Furnitures
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="about.html">About</a></li>   
+      <li><a href="gallery.html" class="active">Furniture</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html" class="active">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <section class="gallery-section">
-    <h1>Our Catlog</h1>
+    <h1>Furniture Catlog</h1>
     <div class="main-buttons">
       <button id="btn-sofa" onclick="toggleSub('sofa')">Sofa</button>
       <button id="btn-beds" onclick="toggleSub('beds')">Beds</button>
       <button id="btn-dining" onclick="toggleSub('dining')">Dining</button>
-      <button id="btn-tables" onclick="toggleSub('tables')">Tables</button>
+      <button id="btn-doors" onclick="toggleSub('doors')">Doors</button>
+      
     </div>
-    
-    
-
+  
     <div id="sub-sofa" class="sub-buttons" style="display: none;">
-      <button onclick="showImages('recliners')">Recliners</button>
-      <button onclick="showImages('sectionals')">Sectionals</button>
-      <button onclick="showImages('loveseats')">Loveseats</button>
+      <button onclick="showImages('recliners')">Sofa set</button>
     </div>
     <div id="sub-beds" class="sub-buttons" style="display: none;">
       <button onclick="showImages('kingbeds')">King Size</button>
@@ -225,12 +221,17 @@
       <button onclick="showImages('double')">Double cots</button>
     </div>
     <div id="sub-dining" class="sub-buttons" style="display: none;">
-      <button onclick="showImages('4seater')">4 Seater</button>
-      <button onclick="showImages('6seater')">6 Seater</button>
+      <button onclick="showImages('Round Table')">Round Table</button>
+      <button onclick="showImages('Rectangle Table')">Rectangle Table</button>
     </div>
-    <div id="sub-tables" class="sub-buttons" style="display: none;">
-      <button onclick="showImages('coffeetables')">Coffee Tables</button>
-      <button onclick="showImages('desktables')">Desk Tables</button>
+    <div id="sub-doors" class="sub-buttons" style="display: none;">
+      <button onclick="showImages('singledoors')">Single Doors</button>
+      <button onclick="showImages('doubledoors')">Double Doors</button>
+    </div>
+    <div id="sub-tables" class="sub-buttons"style="display: none;">
+      <button onclick="showImages('dressingtable')">Dressing Table</button>
+      <button onclick="showImages('desktable')">Desk Table</button>
+
     </div>
     
     
@@ -253,48 +254,43 @@
     const lightboxImg = document.getElementById('lightbox-img');
 
     const images = {
-      recliners: [src="image16.jpeg",'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://5.imimg.com/data5/SELLER/Default/2024/8/444107347/PU/TC/IS/46649564/wooden-dressing-table.jpg',
+      recliners: [src="https://m.media-amazon.com/images/I/61he-o+iQ5L._AC_UF894,1000_QL80_.jpg" ,'images/image6.jpeg','https://ganpatiarts.com/cdn/shop/files/sofasethoney_2.jpg?v=1712142689',
+        'https://thetimberguy.com/cdn/shop/files/Contemporary-Sheesham-Wood-Sofa-set-Choose-your-combination.jpg?v=1683482939',
+        'https://5.imimg.com/data5/ANDROID/Default/2022/6/OW/CC/GW/155127573/prod-20220624-1909189065112527424403122-jpg-500x500.jpg',
+        'https://5.imimg.com/data5/SELLER/Default/2023/9/341871448/XK/FX/YP/10852837/teak-wood-carved-sofa-set-500x500.jpg',
+        'https://5.imimg.com/data5/SELLER/Default/2024/11/462852910/TZ/EG/FW/56119186/whatsapp-image-2024-11-04-at-10-55-17-am.jpeg',
+        'https://tiimg.tistatic.com/fp/1/007/872/solid-comfortable-fine-finish-termite-resistance-brown-wooden-sofa--135.jpg',
         'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840',
-        'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg?tr=w-3840'
-
+        'https://5.imimg.com/data5/ANDROID/Default/2022/5/DK/LT/AW/49062969/product-jpeg-500x500.jpg',
+        'https://kuberfurniture.com/wp-content/uploads/2024/07/Classic-Indian-Teak-Wood-Sofa-Set.webp',
+        'https://www.insaraf.com/cdn/shop/products/SC-8188_52e69e94-b25b-4198-b1cc-aa309cbb08f6_1024x1024.jpeg?v=1529687768',
+        'https://aarsunwoods.com/wp-content/uploads/2019/04/Teak-Wood-Sofa-Set-%E2%80%93-Natural-Finish-UH-YT-56-jpg.webp',
+        'https://www.insaraf.com/cdn/shop/products/DSC_4563-a.jpg?v=1555729451',
+        'https://www.sarcrafts.com/wp-content/uploads/2023/03/812hDkbPkCL._SL1500_.jpg',
+        'https://mywakeup.in/cdn/shop/files/website_FRONT_1680_x_1680.png?v=1739799126&width=1214',
+        'https://kuberfurniture.com/wp-content/uploads/2024/07/Ethan-Solid-Sheesham-Wood-Sofa-Set-Honey-Finish-8.webp',
+        'https://timbercraft.in/cdn/shop/products/teak-wood-sofa-set-tsf-1201-timbercraft-1.jpg?v=1732632657',
+        'https://www.duraster.com/cdn/shop/products/ummed-wooden-sofa-set_d82c60c0-07bf-4f66-86e2-8fe642e54ecc.jpg?v=1645421542',
+        'https://bicfurniture.com/wp-content/uploads/2024/09/ws75-Teakwood-L-shape-sofaset.jpg',
+        'https://images.woodenstreet.de/image/data/fabric-sofa/Mellisa-fabric-sofa/l-shape/honey/new-logo/1.jpg',
+        'https://shop.hapi-marketplace.com/cdn/shop/files/O1CN01s3abNK1bfO0wpP5Pv__2208354173492.png?v=1718089724&width=1445',
+        'https://5.imimg.com/data5/VU/HA/OQ/ANDROID-67531740/product-jpeg.jpg',
+        'https://i.koloapp.in/tr:n-hd/389cc172-7f1c-3411-435e-922257321412',
+        'https://m.media-amazon.com/images/I/81o4-w+PwsL._AC_UF1000,1000_QL80_.jpg',
+        'https://5.imimg.com/data5/SELLER/Default/2023/8/334328254/FZ/LB/VQ/97842370/teak-wood-5-seater-complete-wooden-sofa-set.jpeg',
+        'https://furnishiaa.com/cdn/shop/files/Solid_Wood_2_Seater_Sofa_For_Home_Office_-_Furnishiaa_-_-_-5995821.jpg?v=1732723589',
       ],
       sectionals: [''],
       loveseats: [src="image16.jpeg"],
       kingbeds: [src="image16.jpeg",
-      src="image2.jpeg",
+      'images/image19.jpeg',
       'https://5.imimg.com/data5/SJ/ZZ/VS/ANDROID-93055866/product-jpeg.jpg',
       'https://www.woodsala.com/cdn/shop/files/interior_f9f59190-9e46-4235-8c7b-254e431710ba.jpg?v=1686999404',
-      src="image13.jpeg",
+      'images/image2.jpeg',
       'https://5.imimg.com/data5/SELLER/Default/2024/7/434812523/UL/ZF/VC/28420020/wooden-carving-bed.jpg',
-      src="image8.jpeg",
-      src="image19.jpeg",
-      src="image20.jpeg",
+      'images/image13.jpeg',
+      'images/image20.jpeg',
+      'images/image8.jpeg',
       'https://cdn.shopaccino.com/plusone/products/teak-look-656769_l.jpg',
       'https://woodsala.com/cdn/shop/files/IMG_0314_bc394857-110d-4fe8-8787-85f175c80c8b.jpg?v=1692682907',
       'https://tonyanmak.com/wp-content/uploads/2025/03/Cot-scaled.jpg',
@@ -359,10 +355,88 @@
 
 
       ],
-      '4seater': ['https://m.media-amazon.com/images/I/61GTk34EygL.jpg'],
-      '6seater': ['https://www.ulcdn.net/images/products/141329/product/Orlando_6_seater_dining_set_LP.jpg'],
-      coffeetables: ['https://5.imimg.com/data5/QT/OX/GLADMIN-14418964/designer-center-table.jpg'],
-      desktables: ['https://ii1.pepperfry.com/media/catalog/product/s/e/494x544/sean-study-table-in-provincial-teak-finish-by-amberville-sean-study-table-in-provincial-teak-finish-by-a-w45rxt.jpg']
+      'Round Table': ['https://bisonoffice-hha9bnekb2b3fuax.z03.azurefd.net/img/prods/large/223_plpo7sbrw.jpg',
+      'https://www.nismaayadecor.in/cdn/shop/products/12120.jpg?v=1674117163',
+      'https://kalyanamfurniture.com/wp-content/uploads/2022/07/8948.jpeg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpyHR9y-HNFihVC8DgP2ZxBrXicSakmbWN1oQGo90_UEdjvlUFqYgVU2nIa7P72BnCjnQ&usqp=CAU',
+      'https://5.imimg.com/data5/ANDROID/Default/2023/9/345933621/SO/LI/CL/101466749/product-jpeg-500x500.jpg',
+      'https://i.pinimg.com/736x/e8/1a/0f/e81a0f9d50ba1ea5f945f06427555640.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu9TE0M1ucehXHd3hrJeLxRfm88TUeKx85dNPMSiNPEvscVhXLKpT273s449xnauoSJLQ&usqp=CAU',
+      'https://www.insaraf.com/cdn/shop/products/sHoney.jpg?v=1593664751',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA4qYPV-LDWynYfFB2xsDvMPyv7OCXZ-uOgw&s',
+      'https://www.insaraf.com/cdn/shop/products/DSC_7413.jpg?v=1593526143',
+      'https://cpimg.tistatic.com/09621420/b/4/Wooden-Round-Dining-Table-With-4-Seater.jpg',
+      'https://otiumliving.in/wp-content/uploads/2020/12/12.1-Otium-Teak-Wood-Round-Dining-Table.jpg',
+      'https://woodstage.in/wp-content/uploads/2022/01/FB3A9656.jpg',
+      'https://m.media-amazon.com/images/I/71R7s8AjQwL._AC_UF894,1000_QL80_.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYwriWE-YIh1peet_2nbV-VQwQUFQ_0tD7QA&s',
+      'https://static.wixstatic.com/media/408e1b_733f537e33be4323a4a4e6d54cee587f~mv2.jpg/v1/fill/w_528,h_528,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/408e1b_733f537e33be4323a4a4e6d54cee587f~mv2.jpg',
+      'https://tiimg.tistatic.com/fp/2/007/198/circular-wooden-dining-table-239.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFo0tQztblO7IPdjlBPx2ee0LEDCvWBfMF6V23r8yB0yFgGuyQ8LQvaYCh89YoOLuS_yI&usqp=CAU',
+      'https://foter.com/photos/420/wooden-pedestal-dining-table-with-leaf.jpeg',
+
+
+      ],
+      'Rectangle Table': ['https://www.ulcdn.net/images/products/141329/product/Orlando_6_seater_dining_set_LP.jpg'],
+      singledoors: ['https://images.jdmagicbox.com/quickquotes/images_main/teak-wood-carving-door-for-home-30mm-2223637329-tktdxgh8.jpg',
+      'https://m.media-amazon.com/images/I/515PE5fOHKL.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2025/2/489161301/VI/EY/DJ/190307206/teak-wood-door-500x500.jpeg',
+      'https://m.media-amazon.com/images/I/61awRt792qL._AC_UF1000,1000_QL80_.jpg',
+      'https://i.pinimg.com/originals/79/e5/32/79e532dd793362aab0c33d1e411a7666.jpg',
+      'https://assets-news.housing.com/news/wp-content/uploads/2023/03/24150138/Single-door-design-ideas-for-your-house-entrance-06.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2022/4/FN/DF/TP/34335681/whatsapp-image-2021-07-27-at-10-21-37-am-7--500x500.jpeg',
+      'https://image.made-in-china.com/202f0j00bZniYwDcPKkd/Modern-Design-House-Outdoor-Front-Wooden-Door-Single-Red-Mahogany-Color-Entry-Wood-Doors.webp',
+      'https://5.imimg.com/data5/TF/XM/MY-32149207/solid-wood-door-500x500.jpg',
+      'https://tiimg.tistatic.com/fp/1/008/964/wooden-door-758.jpg',
+      'https://i.pinimg.com/236x/cd/26/75/cd2675c3d4000a18e3da98e587e294f4.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2022/3/LB/ZO/ZX/46806355/teak-wood-design-doors.jpeg',
+      'https://5.imimg.com/data5/SELLER/Default/2022/3/LB/ZO/ZX/46806355/teak-wood-design-doors-500x500.jpeg',
+      'https://tiimg.tistatic.com/fp/1/007/523/cutting-design-brown-finish-wooden-door-for-interior-entry-980.jpg',
+      'https://img.staticmb.com/mbcontent/images/crop/uploads/2024/11/entrance-wooden-door-design_0_1200.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN3Ip09lFPn2zdYjiR5IPuN7Lyi3_yzHLqog&s',
+      'https://www.nicksbuilding.com/Rustic_Exterior_Doors/SW-66_Single_Exterior_Doors_Rustic_Knotty_Alder_2_Panel_Arch_top_panel.jpg',
+      'https://5.imimg.com/data5/ANDROID/Default/2021/10/VF/TJ/PI/38254516/img-20210201-wa0017-jpg-500x500.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2022/7/HP/HO/PG/48762484/img-6591-500x500.jpg',
+      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.indiamart.com%2Fproddetail%2Fteak-wood-panel-door-21840091530.html&psig=AOvVaw1rznGBRXL_gpg90fcSnQxW&ust=1746301487870000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqGAoTCNDUhJHGhY0DFQAAAAAdAAAAABDVAQ',
+      'https://5.imimg.com/data5/SELLER/Default/2024/3/404584568/XQ/RT/HL/11145171/wooden-panel-door.jpeg',
+      'https://5.imimg.com/data5/HD/EQ/NP/ANDROID-53794723/img-20190922-125857-jpg-500x500.jpg',
+      'https://images.livspace-cdn.com/w:3840/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/design-ideas-thumbnails-1628773921-7vSz1/amj-2025-1744185110-pMHWe/door-design-1744828014-5ZJK9/175-1744828036-jlrYA.jpg',
+      'https://www.doornmore.com/media/catalog/product/p/1/p101-slm-sh_sgl___1_sl.jpg',
+      'https://i.pinimg.com/236x/40/a1/29/40a12983346acbf2a123bcdf00238be2.jpg',
+
+      ],
+      doubledoors: ['https://5.imimg.com/data5/SELLER/Default/2022/2/YL/IU/BR/134780157/indian-teak-wood-main-door-500x500.jpg',
+      'https://5.imimg.com/data5/ANDROID/Default/2022/1/BK/HC/DF/98470943/product-jpeg-500x500.jpg',
+      'https://i.etsystatic.com/53568537/r/il/c04cdf/6183575459/il_570xN.6183575459_nbwj.jpg',
+      'https://5.imimg.com/data5/MA/WB/GF/SELLER-40129818/pvc-waterproof-wooden-doors-in-dehradun-500x500.jpg',
+      'https://5.imimg.com/data5/BQ/MV/MY-43875939/designer-wooden-door-500x500.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2023/6/318560768/JN/RQ/MA/20963525/mahagony-door-frames-500x500.jpeg',
+      'https://5.imimg.com/data5/SELLER/Default/2023/10/352652490/BR/DN/BV/89535838/front-entry-door.jpeg',
+      'https://i.pinimg.com/736x/e8/50/cc/e850ccda15b5f0ec6bd19e758b630030.jpg',
+      'https://constructionkart.in/wp-content/uploads/2020/08/New-Project-2020-08-19T161759.835-300x300.jpg',
+      'https://5.imimg.com/data5/ANDROID/Default/2024/1/380324715/JH/RF/DY/40088941/product-jpeg.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2024/3/402085842/XI/WK/TL/151397622/flower-design-indian-teak-wood-double-door-500x500.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2024/3/402085739/VT/FX/FC/151397622/flower-design-indian-teak-wood-double-door-500x500.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2023/7/324856446/TA/QM/XL/20510849/flower-design-teak-wood-door.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2024/3/402085739/VT/FX/FC/151397622/flower-design-indian-teak-wood-double-door-500x500.jpg',
+      'https://i.pinimg.com/736x/47/3e/b7/473eb7d861d3c02360e08b86f50b8ac5.jpg',
+      'https://images.jdmagicbox.com/quickquotes/images_main/indian-teak-doors-with-polish-2220370160-7jakeu9z.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWqYJD-wCg9kjfbZgVWezCH62TBt089H0FBgbWt6y4QVBeT55CTraU8BSlwiSdDDWUNgc&usqp=CAU',
+      'https://i.pinimg.com/236x/c9/1a/b7/c91ab7309c18f653f2766956821fc5f9.jpg',
+      'https://i.pinimg.com/236x/32/09/25/3209258c39cd82e6bd62868840a664c4.jpg',
+      'https://5.imimg.com/data5/ANDROID/Default/2023/4/304165959/ZJ/FT/PV/118511743/product-jpeg.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2024/2/382677394/AL/IU/QA/56097644/86-inch-teak-wood-double-door-500x500.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2023/6/320309948/ZJ/UL/KB/12684398/indoor-teak-wood-carved-double-door-500x500.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2021/10/FO/CU/HE/129855039/teak-wood-double-door-500x500.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2023/8/334260248/YJ/PW/JH/193674938/cp-teak-wood-double-door.jpeg',
+      'https://5.imimg.com/data5/SELLER/Default/2021/9/IG/IM/QR/127599491/wooden-home-main-door.jpg',
+      'https://5.imimg.com/data5/SELLER/Default/2022/9/QB/HH/KL/119465075/indian-teak-wood-500x500.jpg',
+
+
+     
+
+      ],
+      dressingtable: ['https://foter.com/photos/420/wooden-pedestal-dining-table-with-leaf.jpeg']
     };
 
     function toggleSub(id) {
