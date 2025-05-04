@@ -27,15 +27,19 @@
       line-height: 1.6;
     }
     .navbar {
-      display: flex;
-      flex-direction: column;
-      background-color: #fff;
-      color: #212121;
-      padding-bottom: 20px;
-      padding-left: 20px;
-      padding-top: 20px;
-  
-    }
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: #212121;
+  padding-bottom: 20px;
+  padding-top: 20px;
+
+  position: sticky;
+  top: 0; /* This is missing in your code */
+  z-index: 1000; /* Ensures it stays above other content */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds a slight shadow */
+}
+
 
     .logo {
       display: flex;
@@ -51,13 +55,15 @@
       width: auto;
       margin-right: 10px;
     }
+
     .nav-links {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-
+      padding-top: 19px;
+      padding-right: 15px;
     }
 
     .nav-links li a {
@@ -66,15 +72,16 @@
       font-weight: 500;
       transition: color 0.3s;
     }
+
     .nav-links li a:hover,
     .nav-links li a.active {
       color: #B71C1C;
     }
+
     @media (min-width: 769px) {
       .navbar {
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
       }
       .logo {
         margin-bottom: 0;
@@ -85,6 +92,7 @@
       text-align: center;
       font-size: 20px;
       flex: 1;
+      padding-bottom:200px ;
     }
     .main-buttons, .sub-buttons {
       display: flex;
@@ -164,12 +172,14 @@
       max-height: 80%;
       border-radius: 10px;
     }
-    .footer {
+    footer {
+      background: #212121;
+      color: hsl(0, 0%, 50%);
       text-align: center;
-      padding: 20px;
-      background-color: #f0f0f0;
+      padding: 20px 0;
       margin-top: auto;
     }
+ 
     .main-buttons button {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
@@ -179,9 +189,46 @@
   background-color: #8B0000; /* Slightly dark red highlight */
   color: white;
 }
+.footer-extra {
+  background-color: rgb(0, 0, 0);
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
 
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1000px;
+  width: 100%;
+  gap: 30px;
+}
 
+.footer-contact, .footer-links {
+  flex: 1;
+  min-width: 250px;
+}
 
+.footer-contact h3, .footer-links h3 {
+  color: whitesmoke;
+  margin-bottom: 15px;
+}
+
+.footer-contact p, .footer-links ul li a {
+  color: gray;
+  line-height: 1.8;
+  text-decoration: none;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
   </style>
 </head>
 
@@ -191,7 +238,7 @@
   <nav class="navbar">
     <div class="logo">
       <img src="Brown_Black_Simple_Sawmill_Logo-removebg-preview.png" alt="Logo">
-      Upendar Furnitures
+      Upendar Wood works
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -242,6 +289,28 @@
   <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
     <img id="lightbox-img" src="" alt="Full View">
   </div>
+
+  <section class="footer-extra">
+    <div class="footer-columns">
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p><i class="fa fa-phone"></i> +91 8096414441</p>
+        <p><i class="fa fa-envelope"></i> upendarfurnitures@gmail.com</p>
+        <p><i class="fa fa-map-marker-alt"></i> Chilkanagar road , uppal , Hyderabad , 500039</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Furniture</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
 
   <footer class="footer">
     <p>&copy; 2025 Upendar Furnitures. All rights reserved.</p>
@@ -410,7 +479,7 @@
       'https://i.etsystatic.com/53568537/r/il/c04cdf/6183575459/il_570xN.6183575459_nbwj.jpg',
       'https://5.imimg.com/data5/MA/WB/GF/SELLER-40129818/pvc-waterproof-wooden-doors-in-dehradun-500x500.jpg',
       'https://5.imimg.com/data5/BQ/MV/MY-43875939/designer-wooden-door-500x500.jpg',
-      'https://5.imimg.com/data5/SELLER/Default/2023/6/318560768/JN/RQ/MA/20963525/mahagony-door-frames-500x500.jpeg',
+      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fmaterialdepot.in%2Fmpt-dd-1-81x33-inch-32-mm-frame-burma-teak-wood-double-door-30-mm%2Fproduct&psig=AOvVaw1NGxynxMmI7jCBcyV_nX9V&ust=1746302078551000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJD8gqrIhY0DFQAAAAAdAAAAABAn',
       'https://5.imimg.com/data5/SELLER/Default/2023/10/352652490/BR/DN/BV/89535838/front-entry-door.jpeg',
       'https://i.pinimg.com/736x/e8/50/cc/e850ccda15b5f0ec6bd19e758b630030.jpg',
       'https://constructionkart.in/wp-content/uploads/2020/08/New-Project-2020-08-19T161759.835-300x300.jpg',
