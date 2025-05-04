@@ -24,13 +24,19 @@
 
     /* Navbar */
     .navbar {
-      display: flex;
-      flex-direction: column;
-      background-color: #fff;
-      color: #212121;
-      padding-bottom: 20px;
-      padding-top: 20px;
-    }
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: #212121;
+  padding-bottom: 20px;
+  padding-top: 20px;
+
+  position: sticky;
+  top: 0; /* This is missing in your code */
+  z-index: 1000; /* Ensures it stays above other content */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds a slight shadow */
+}
+
 
     .logo {
       display: flex;
@@ -53,7 +59,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      padding-top: 16px;
+      padding-top: 19px;
       padding-right: 15px;
     }
 
@@ -271,13 +277,6 @@
       height: auto;
       max-height: 250px;
     }
-
-    footer {
-      background-color: #212121;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-    }
     .dot-indicators {
   display: flex;
   justify-content: center;
@@ -342,7 +341,6 @@
   border: 1px solid #B71C1C;
   font-size: 1rem;
   padding-left: 30px;
-  padding-top: 10px;
 
 }
 
@@ -351,7 +349,7 @@
 }
 .search-container {
   position: absolute;
-  top: 30px;
+padding-top: 40px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -359,7 +357,7 @@
 
 }
 .search-btn {
-  padding: 10px 20px;
+padding-left: 5px;
   border: none;
   background-color: transparent;
   border-radius: 25px;
@@ -430,7 +428,7 @@
 }
 
 .footer-contact h3, .footer-links h3 {
-  color: #B71C1C;
+  color: #212121;
   margin-bottom: 15px;
 }
 
@@ -448,6 +446,13 @@
 .footer-links ul li a:hover {
   text-decoration: underline;
 }
+footer {
+      background: #212121;
+      color: hsl(0, 0%, 50%);
+      text-align: center;
+      padding: 20px 0;
+      margin-top: auto;
+    }
 
   </style>
 
@@ -742,9 +747,9 @@ window.addEventListener("DOMContentLoaded", function() {
     <div class="footer-columns">
       <div class="footer-contact">
         <h3>Contact Us</h3>
-        <p><i class="fa fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa fa-phone"></i> +91 8096414441</p>
         <p><i class="fa fa-envelope"></i> upendarfurnitures@gmail.com</p>
-        <p><i class="fa fa-map-marker-alt"></i> Hyderabad, Telangana, India</p>
+        <p><i class="fa fa-map-marker-alt"></i> Chilkanagar road , uppal , Hyderabad, 500039</p>
       </div>
       <div class="footer-links">
         <h3>Quick Links</h3>
