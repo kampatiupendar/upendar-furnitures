@@ -18,16 +18,20 @@
       line-height: 1.6;
     }
 
-    /* Navbar */
     .navbar {
-      display: flex;
-      flex-direction: column;
-      background-color: #fff;
-      color: #212121;
-      padding-bottom: 20px;
-      padding-top: 20px;
-  
-    }
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: #212121;
+  padding-bottom: 20px;
+  padding-top: 20px;
+
+  position: sticky;
+  top: 0; /* This is missing in your code */
+  z-index: 1000; /* Ensures it stays above other content */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds a slight shadow */
+}
+
 
     .logo {
       display: flex;
@@ -43,14 +47,15 @@
       width: auto;
       margin-right: 10px;
     }
+
     .nav-links {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      padding-right: 10px;
-
+      padding-top: 19px;
+      padding-right: 15px;
     }
 
     .nav-links li a {
@@ -59,20 +64,17 @@
       font-weight: 500;
       transition: color 0.3s;
     }
+
     .nav-links li a:hover,
     .nav-links li a.active {
       color: #B71C1C;
     }
 
-   
-
     @media (min-width: 769px) {
       .navbar {
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
       }
-
       .logo {
         margin-bottom: 0;
       }
@@ -121,13 +123,7 @@
     }
 
     /* Footer */
-    .footer {
-      margin-top: 40px;
-      text-align: center;
-      padding: 20px;
-      background-color: #f0f0f0;
-    }
-
+ 
     html, body {
       height: 100%;
       display: flex;
@@ -136,15 +132,6 @@
 
     .gallery-section {
       flex: 1;
-    }
-
-    .footer {
-      margin-top: auto;
-      background-color: #212121;
-      
-    }
-    .footer p{
-      color: #fff;
     }
     .about-section span{
       color: #B71C1C;
@@ -176,7 +163,7 @@
 }
 
 .footer-contact p, .footer-links ul li a {
-  color: gray;
+  color: hsl(0, 0%, 50%);
   line-height: 1.8;
   text-decoration: none;
 }
@@ -189,6 +176,14 @@
 .footer-links ul li a:hover {
   text-decoration: underline;
 }
+.footer {
+      background: #212121;
+      color: hsl(0, 0%, 50%);
+      text-align: center;
+      padding: 20px 0;
+      margin-top: auto;
+    }
+ 
 
   </style>
 </head>
@@ -196,7 +191,7 @@
   <nav class="navbar">
     <div class="logo">
       <img src="Brown_Black_Simple_Sawmill_Logo-removebg-preview.png" alt="Logo">
-      Upendar Furnitures
+      Upendar Wood works
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -211,8 +206,8 @@
     <h2>About <span>US</span></h2>
     <div class="about-content">
       <div class="about-text">
-        <p> Welcome to <strong>Upendar Furnitures</strong>, where craftsmanship meets creativity. With over 20 years of experience in the furniture industry, we pride ourselves on delivering high-quality, handcrafted furniture made using premium materials like teak wood, transforming your space into a true reflection of your style. </p> <br> <p> Every piece we create—from luxurious sofas to custom beds and stylish dining sets—is built with precision, passion, and the finest materials, including durable teak wood. Whether you're furnishing your dream home or enhancing your workspace, our mission is to provide furniture solutions that combine aesthetics with functionality. </p> <br> <p> At Upendar Furnitures, customer satisfaction is our top priority. We work closely with each client to understand their vision and deliver results that exceed expectations. Join our growing family of happy clients and experience the timeless beauty of finely crafted teak wood furniture. </p>
-        <p> Every piece we create—from luxurious sofas to custom beds and stylish dining sets—is built with precision, passion, and the finest materials, including durable teak wood. Whether you're furnishing your dream home or enhancing your workspace, our mission is to provide furniture solutions that combine aesthetics with functionality. </p> <br> <p> At Upendar Furnitures, customer satisfaction is our top priority. We work closely with each client to understand their vision and deliver results that exceed expectations. Join our growing family of happy clients and experience the timeless beauty of finely crafted teak wood furniture. </p> 
+        <p> Welcome to <strong>Upendar Wood works</strong>, where craftsmanship meets creativity. With over 20 years of experience in the furniture industry, we pride ourselves on delivering high-quality, handcrafted furniture made using premium materials like teak wood, transforming your space into a true reflection of your style. </p> <br> <p> Every piece we create—from luxurious sofas to custom beds and stylish dining sets—is built with precision, passion, and the finest materials, including durable teak wood. Whether you're furnishing your dream home or enhancing your workspace, our mission is to provide furniture solutions that combine aesthetics with functionality. </p> <br> <p> At Upendar Wood works, customer satisfaction is our top priority. We work closely with each client to understand their vision and deliver results that exceed expectations. Join our growing family of happy clients and experience the timeless beauty of finely crafted teak wood furniture. </p>
+        <p> Every piece we create—from luxurious sofas to custom beds and stylish dining sets—is built with precision, passion, and the finest materials, including durable teak wood. Whether you're furnishing your dream home or enhancing your workspace, our mission is to provide furniture solutions that combine aesthetics with functionality. </p> <br> <p> At Upendar Wood works, customer satisfaction is our top priority. We work closely with each client to understand their vision and deliver results that exceed expectations. Join our growing family of happy clients and experience the timeless beauty of finely crafted teak wood furniture. </p> 
         
       </div>
       <div class="about-image">
@@ -224,9 +219,9 @@
     <div class="footer-columns">
       <div class="footer-contact">
         <h3>Contact Us</h3>
-        <p><i class="fa fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa fa-phone"></i> +91 8096414441</p>
         <p><i class="fa fa-envelope"></i> upendarfurnitures@gmail.com</p>
-        <p><i class="fa fa-map-marker-alt"></i> Hyderabad, Telangana, India</p>
+        <p><i class="fa fa-map-marker-alt"></i> Chilkanagar road , uppal , Hyderabad , 500039 </p>
       </div>
       <div class="footer-links">
         <h3>Quick Links</h3>
