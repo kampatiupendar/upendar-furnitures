@@ -13,40 +13,67 @@
       background-color: #E0E0E0;
       color: #212121;
     }
+    
     .navbar {
-      display: flex;
-      flex-direction: column;
-      background: #fff;
-      padding: 20px;
-    }
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: #212121;
+  padding-bottom: 20px;
+  padding-top: 20px;
+
+  position: sticky;
+  top: 0; /* This is missing in your code */
+  z-index: 1000; /* Ensures it stays above other content */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds a slight shadow */
+}
+
+
     .logo {
       display: flex;
       align-items: center;
       font-size: 1.5rem;
       font-weight: bold;
+      color: #212121;
       margin-bottom: 10px;
     }
+
     .logo img {
       height: 60px;
+      width: auto;
       margin-right: 10px;
     }
+
     .nav-links {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      padding-top: 19px;
+      padding-right: 15px;
     }
+
     .nav-links li a {
-      text-decoration: none;
       color: #212121;
+      text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
-    .nav-links li a:hover, .nav-links li a.active {
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
       color: #B71C1C;
     }
+
     @media (min-width: 769px) {
-      .navbar { flex-direction: row; justify-content: space-between; align-items: center; }
+      .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .logo {
+        margin-bottom: 0;
+      }
     }
 
     .services {
@@ -79,7 +106,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.7); /* dark overlay */
+      background: rgba(0, 0, 0, 0.5); /* dark overlay */
       transition: background 0.3s ease;
     }
     .service h3 {
@@ -164,11 +191,55 @@
 
     footer {
       background: #212121;
-      color: #fff;
+      color: hsl(0, 0%, 50%);
       text-align: center;
       padding: 20px 0;
       margin-top: auto;
     }
+
+    .footer-extra {
+  background-color: rgb(0, 0, 0);
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1000px;
+  width: 100%;
+  gap: 30px;
+}
+
+.footer-contact, .footer-links {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-contact h3, .footer-links h3 {
+  color: whitesmoke;
+  margin-bottom: 15px;
+}
+
+.footer-contact p, .footer-links ul li a {
+  color: gray;
+  line-height: 1.8;
+  text-decoration: none;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+
   </style>
 
 </head>
@@ -176,15 +247,15 @@
 
   <nav class="navbar">
     <div class="logo">
-      <img src="https://static.vecteezy.com/system/resources/previews/044/845/312/non_2x/woodwork-carpentry-logo-design-template-vintage-style-vector.jpg" alt="Logo">
-      Upendar Furnitures
+      <img src="Brown_Black_Simple_Sawmill_Logo-removebg-preview.png" alt="Logo">
+      Upendar Wood works
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="gallery.html">Furniture</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="services.html" class="active">services</a></li>
     </ul>
   </nav>
 
@@ -204,28 +275,44 @@
         <h3>Dining</h3>
       </a>
       <a href="kitchen-detail.html" class="service">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLiFFfH3-J-jEfjbGM6aL_jdDNbiEVKj3q0A&s" alt="Kitchen Furniture">
+        <img src="https://images.wallpaperscraft.com/image/single/kitchen_furniture_interior_design_86611_1920x1080.jpg" alt="Kitchen Furniture">
         <h3>Kitchen</h3>
       </a>
       <a href="office-detail.html" class="service">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLiFFfH3-J-jEfjbGM6aL_jdDNbiEVKj3q0A&s" alt="Office Furniture">
+        <img src="https://www.niveeta.com/images/executive-furniture-manufacturer-delhi.webp" alt="Office Furniture">
         <h3>Office Furniture</h3>
       </a>
       <a href="storage-detail.html" class="service">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLiFFfH3-J-jEfjbGM6aL_jdDNbiEVKj3q0A&s" alt="Storage Solutions">
+        <img src="https://www.ulcdn.net/images/products/210170/slide/1332x726/Webster_Shoe_Cabinet_With_Lock_Walnut_Finish_32_Pair_Capacity_merc1.jpg?1626065443" alt="Storage Solutions">
         <h3>Storage Solutions</h3>
       </a>
       <a href="customwork-detail.html" class="service">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLiFFfH3-J-jEfjbGM6aL_jdDNbiEVKj3q0A&s" alt="Custom Work">
-        <h3>Custom Work</h3>
-      </a>
-      <a href="customwork-detail.html" class="service">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLiFFfH3-J-jEfjbGM6aL_jdDNbiEVKj3q0A&s" alt="Custom Work">
+        <img src="https://www.bizinsure.com/wp-content/uploads/2022/05/types-of-carpentry-role-scaled.jpg" alt="Custom Work">
         <h3>Custom Work</h3>
       </a>
     </div>
-    
   </section>
+  <section class="footer-extra">
+    <div class="footer-columns">
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p><i class="fa fa-phone"></i> +91 8096414441</p>
+        <p><i class="fa fa-envelope"></i> upendarfurnitures@gmail.com</p>
+        <p><i class="fa fa-map-marker-alt"></i> Chilkanagar road , uppal , Hyderabad , 500039</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Furniture</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
 
   <footer>
     <p>&copy; 2025 Upendar Furnitures. All rights reserved.</p>
