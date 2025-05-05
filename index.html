@@ -98,12 +98,11 @@
     }
     /* Default background for desktop */
 .hero {
-  background: url('https://media.istockphoto.com/id/1061173208/photo/young-carpenter-using-sander-while-working-on-a-piece-of-wood.jpg?s=612x612&w=0&k=20&c=dG_8gk4Zkfq2hsXcxZSHzc1e39QpQODb5AXvx1dWRAw=') center/cover no-repeat;
-  height: 78vh;
-  color: #fff;
+  background: url('https://cdn.prod.website-files.com/647888ca92d03e3fca3f1ea0/647888ca92d03e3fca3f2389_carpentry.jpg') center/cover no-repeat;
+  height: 82vh;
+  color: black;
   position: relative;
 }
-
 @media (max-width: 768px) {
   /* Mobile background */
   .hero {
@@ -424,6 +423,7 @@ padding-left: 5px;
 .footer-contact, .footer-links {
   flex: 1;
   min-width: 250px;
+ 
 }
 
 .footer-contact h3, .footer-links h3 {
@@ -712,6 +712,7 @@ window.addEventListener("DOMContentLoaded", function() {
       <p>Crafting Elegance & Comfort for Every Home</p>
       <a href="gallery.html"><button class="explore-btn">Explore Furniture</button></a>
     </div>
+    
   </section>
   <section class="bestsellers">
     <h2>Best Sellers</h2>
@@ -789,7 +790,7 @@ window.addEventListener("DOMContentLoaded", function() {
       <p>We belive your home should be a reflection of you. We collaborate with clints to create functional and stylish spaces that tell their unique stories. Our passion brings your vision to life, resulting in beautiful and personalized furnitures you'll love.</p>
     </div>
     <div class="content-image">
-      <img src="https://cdn.prod.website-files.com/647888ca92d03e3fca3f1ea0/647888ca92d03e3fca3f2389_carpentry.jpg" alt="Craftsmanship">
+      <img src="https://static.vecteezy.com/system/resources/previews/002/387/457/large_2x/professional-carpenter-man-working-with-woodwork-industry-tool-construction-craftsman-person-workshop-with-timber-and-equipment-wood-work-free-photo.jpg" alt="Craftsmanship">
     </div>
   </section>
 
@@ -901,11 +902,36 @@ window.addEventListener("DOMContentLoaded", function() {
       background-color: #128c7e;
     }
   </style>
+  <div class="download-btn-container text-center my-4">
+    <a href="Upendar (10).pdf" download class="btn btn-download">
+      📥 Download Brochure
+    </a>
+  </div>
+  <style>
+    .btn-download {
+background-color: #28a745;
+color: white;
+padding: 12px 28px;
+font-size: 18px;
+border: none;
+border-radius: 8px;
+text-decoration: none;
+transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+background-color: #218838;
+text-decoration: none;
+color: white;
+}
+
+.download-btn-container {
+margin-top: 20px;
+padding-bottom: 30px;
+}
+
+  </style>
 </section>
-
-
-
-
   <section class="footer-extra">
     <div class="footer-columns">
       <div class="footer-contact">
@@ -928,6 +954,13 @@ window.addEventListener("DOMContentLoaded", function() {
     <div>
     </div>
   </section>
+  <style>
+    .footer-contact p, .footer-links ul li a {
+  color: hsl(0, 0%, 50%);
+  line-height: 1.8;
+  text-decoration: none;
+}
+  </style>
   <footer>
     <p>&copy; 2025 Upendar Furnitures. All rights reserved.</p>
   </footer>
