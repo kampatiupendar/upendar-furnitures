@@ -19,7 +19,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      
     }
     .navbar a {
       text-decoration: none;
@@ -104,6 +104,41 @@
       padding: 20px;
       margin-top: 3rem;
     }
+    @media screen and (max-width: 768px) {
+      .gallery {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .gallery-item {
+        flex: 0 0 auto;
+        width: 180px;
+        min-width: 180px;
+      }
+    }
+    .explore-btn-container {
+  text-align: center;
+  margin: 2rem 0;
+  padding-top: 20px;
+}
+
+.explore-btn {
+  background-color: #B71C1C;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #a31515;
+  transform: scale(1.05);
+}
+
   </style>
 </head>
 <body>
@@ -120,28 +155,31 @@
 
   <div class="container">
     <div class="hero">
-      <h1>Living Room Furniture</h1>
+      <h3>Living Room Furniture</h3>
       <h5>Comfort, style, and functionality in every piece we craft.</h5>
       <h2>Best Sellers</h2>
     </div>
 
     <div class="gallery">
       <div class="gallery-item">
-        <img src="https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/npl_images_server/SOFA_WSSFASTFNN2FMSGGB/SOFA_WSSFASTFNN2FMSGGB_1.jpg" alt="Sofa Design">
+        <img src="https://m.media-amazon.com/images/I/61he-o+iQ5L._AC_UF894,1000_QL80_.jpg" alt="Sofa Design">
         <caption>Sofa Set</caption>
       </div>
       <div class="gallery-item">
-        <img src="https://craftsmill.in/cdn/shop/files/sofas-accent-chairs-olive-green-soft-velvet-touch-fabric-ludwig-accent-chair-46576129212707.png?v=1725049018" alt="TV Unit">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj_NxJzfPiVwuui9mRIWaFRJ5hAfYbxWT-6Q&s" alt="TV Unit">
         <caption>TV Unit</caption>
       </div>
       <div class="gallery-item">
-        <img src="https://craftsmill.in/cdn/shop/files/sofas-accent-chairs-olive-green-soft-velvet-touch-fabric-ludwig-accent-chair-46576129212707.png?v=1725049018" alt="Living Furniture">
+        <img src="https://zugunu.com/wp-content/uploads/2022/11/Wood-Wall-shelf-Decor.jpg" alt="Living Furniture">
         <caption>Wooden Wall Shelf</caption>
       </div>
       <div class="gallery-item">
-        <img src="https://craftsmill.in/cdn/shop/files/sofas-accent-chairs-olive-green-soft-velvet-touch-fabric-ludwig-accent-chair-46576129212707.png?v=1725049018" alt="Living Decor">
+        <img src="https://lizzawood.com/wp-content/uploads/2024/04/t-1-1.jpg" alt="Living Decor">
         <caption>Center Table</caption>
       </div>
+    </div>
+    <div class="explore-btn-container">
+      <a href="gallery.html" class="explore-btn">Explore Furniture</a>
     </div>
 
     <div class="description">
