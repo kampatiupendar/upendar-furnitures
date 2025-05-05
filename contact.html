@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Upendar Furnitures</title>
+  <title>Contact - Upendar wood works</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <style>
      * {
@@ -22,15 +22,18 @@
 
     /* Navbar */
     .navbar {
-      display: flex;
-      flex-direction: column;
-      background-color: #fff;
-      color: #212121;
-      padding-bottom: 20px;
-      padding-left: 20px;
-      padding-top: 20px;
-  
-    }
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: #212121;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  position: sticky;
+  top: 0; /* This is missing in your code */
+  z-index: 1000; /* Ensures it stays above other content */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds a slight shadow */
+}
+
 
     .logo {
       display: flex;
@@ -46,14 +49,15 @@
       width: auto;
       margin-right: 10px;
     }
+
     .nav-links {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      padding-right: 10px;
-
+      padding-top: 19px;
+      padding-right: 15px;
     }
 
     .nav-links li a {
@@ -72,9 +76,7 @@
       .navbar {
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
       }
-
       .logo {
         margin-bottom: 0;
       }
@@ -155,7 +157,7 @@
       text-align: center;
       padding: 20px;
       background-color: #212121;
-      color: #fff;
+      color: hsl(0, 0%, 50%);
     }
     /* WhatsApp Floating Button CSS */
 .whatsapp-float {
@@ -187,14 +189,14 @@
 <body>
   <div class="navbar">
     <div class="logo">
-      <img src="https://static.vecteezy.com/system/resources/previews/044/845/312/non_2x/woodwork-carpentry-logo-design-template-vintage-style-vector.jpg" alt="logo" />
-      Upendar Furnitures
+      <img src="Brown_Black_Simple_Sawmill_Logo-removebg-preview.png" alt="logo" />
+      Upendar Wood works
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Furniture</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
       <li><a class="active" href="contact.html">Contact</a></li>
     </ul>
   </div>
