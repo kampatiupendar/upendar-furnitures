@@ -103,6 +103,7 @@
   position: relative;
 }
 @media (max-width: 768px) {
+  
   /* Mobile background */
   .hero {
     background: url('https://t3.ftcdn.net/jpg/01/96/38/76/360_F_196387673_SvTyDNWpvKEvmmTMamjcME2lAbdFEwfW.jpg') center/cover no-repeat;
@@ -682,7 +683,59 @@ window.addEventListener("DOMContentLoaded", function() {
 
   // optional: Button click kuda already onclick vundhi, so adhi work chesthundi
 });
+
+
 </script>   
+<style>
+  .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #B71C1C;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+}
+
+</style>
+<script>
+  function toggleMenu() {
+  const navLinks = document.querySelector(".nav-links");
+  navLinks.classList.toggle("open");
+}
+</script>
   
 </head>
 <body>
@@ -691,13 +744,18 @@ window.addEventListener("DOMContentLoaded", function() {
       <img src="Brown_Black_Simple_Sawmill_Logo-removebg-preview.png" alt="Logo">
       Upendar  <span> Wood works</span>
     </div>
+    <!-- Add this button inside .navbar div, preferably after the logo -->
+<button class="menu-toggle" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</button>
+
     
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li class="dropdown">
         About
         <ul class="dropdown-menu">
-          <li><a href="company.html">Company</a></li>
+          <li><a href="company.html">Our Manufacturing Unit</a></li>
           <li><a href="materials.html">Our Material and Quality</a></li>
           <li><a href="facilities.html">Our Facilities</a></li>
           <li><a href="advantages.html">Advantages of Our Product</a></li>
@@ -742,27 +800,101 @@ window.addEventListener("DOMContentLoaded", function() {
 .dropdown:hover .dropdown-menu {
   display: block;
 }
-
-      </style>
+  </style>
      
       <li><a href="gallery.html">Furniture</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </header>
-  <section class="hero"> 
-    <form class="search-container" onsubmit="searchProduct(); return false;">
-      <input type="text" id="searchInput" class="search-bar" placeholder="Search products...">
-      <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
-    </form>
-    
-    <div class="hero-content">
-      <h1>Welcome to <br>Upendar Wood Works</h1>
-      <p>Crafting Elegance & Comfort for Every Home</p>
+  <section class="hero" id="heroSection">
+    <div class="hero-content" id="heroContent">
+      <h1 id="heroTitle">Welcome to Upendar Wood Works</h1>
+      <p id="heroSubtitle">Crafting Elegance & Comfort for Every Home</p>
       <a href="gallery.html"><button class="explore-btn">Explore Furniture</button></a>
     </div>
-    
+    <button class="arrow-btn left" onclick="prevSlide()"><i class="fa-solid fa-arrow-left"></i></button>
+    <button class="arrow-btn right" onclick="nextSlide()"><i class="fa-solid fa-arrow-right"></i></button>
   </section>
+  <script>
+    const heroData = [
+  {
+    image: "https://weberwoodcrafters.com/wp-content/uploads/2022/08/slider-2.jpg",
+    title: "Welcome to Upendar Wood Works",
+    subtitle: "Crafting Elegance & Comfort for Every Home"
+  },
+  {
+    image: "https://www.rajwadafurnish.com/cdn/shop/files/Anamika-Sheesham-Wood-3-Seater-Sofa-natural-rajawada-furnish.webp?v=1737882391",
+    title: "Premium Quality Furniture",
+    subtitle: "Where Craft Meets Class"
+  },
+  {
+    image: "https://t3.ftcdn.net/jpg/01/96/38/76/360_F_196387673_SvTyDNWpvKEvmmTMamjcME2lAbdFEwfW.jpg",
+    title: "Built to Last",
+    subtitle: "Furniture that fits your lifestyle"
+  }
+];
+
+let currentSlide = 0;
+
+function updateHero() {
+  const hero = document.getElementById("heroSection");
+  const title = document.getElementById("heroTitle");
+  const subtitle = document.getElementById("heroSubtitle");
+
+  // Fade out
+  title.style.opacity = 0;
+  subtitle.style.opacity = 0;
+
+  setTimeout(() => {
+    hero.style.backgroundImage = `url('${heroData[currentSlide].image}')`;
+    title.textContent = heroData[currentSlide].title;
+    subtitle.textContent = heroData[currentSlide].subtitle;
+
+    // Fade in
+    title.style.opacity = 1;
+    subtitle.style.opacity = 1;
+  }, 300);
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % heroData.length;
+  updateHero();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + heroData.length) % heroData.length;
+  updateHero();
+}
+
+// Initial setup
+window.addEventListener("DOMContentLoaded", updateHero);
+
+  </script>
+  <style>
+  .arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  font-size: 1.3rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 3;
+  border-radius: 5px;
+  color: whitesmoke;
+  background-color: transparent;
+}
+
+.arrow-btn.left {
+  left: 10px;
+}
+
+.arrow-btn.right {
+  right: 10px;
+}
+  </style>
+  
   <section class="bestsellers">
     <h2>Best Sellers</h2>
     <div class="bestseller-container">
