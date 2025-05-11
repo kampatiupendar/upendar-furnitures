@@ -67,7 +67,6 @@
     .nav-links li a {
       color: #212121;
       text-decoration: none;
-      font-weight: 500;
       transition: color 0.3s;
     }
 
@@ -98,7 +97,7 @@
     }
     /* Default background for desktop */
 .hero {
-  background: url('https://cdn.prod.website-files.com/647888ca92d03e3fca3f1ea0/647888ca92d03e3fca3f2389_carpentry.jpg') center/cover no-repeat;
+  background: url('https://weberwoodcrafters.com/wp-content/uploads/2022/08/slider-2.jpg') center/cover no-repeat;
   height: 82vh;
   color: black;
   position: relative;
@@ -106,8 +105,8 @@
 @media (max-width: 768px) {
   /* Mobile background */
   .hero {
-    background: url('https://m.media-amazon.com/images/I/81XQs+82MFL.jpg') center/cover no-repeat;
-    height: 70vh;
+    background: url('https://t3.ftcdn.net/jpg/01/96/38/76/360_F_196387673_SvTyDNWpvKEvmmTMamjcME2lAbdFEwfW.jpg') center/cover no-repeat;
+    height: 74vh;
   }
   .hero-content a{
     padding-top: 80px;
@@ -695,7 +694,57 @@ window.addEventListener("DOMContentLoaded", function() {
     
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        About
+        <ul class="dropdown-menu">
+          <li><a href="company.html">Company</a></li>
+          <li><a href="materials.html">Our Material and Quality</a></li>
+          <li><a href="facilities.html">Our Facilities</a></li>
+          <li><a href="advantages.html">Advantages of Our Product</a></li>
+        </ul>
+      </li>
+      <style>
+        /* Dropdown submenu on hover */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  min-width: 220px;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+  color: #212121;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f2f2f2;
+  color: #B71C1C;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+      </style>
+     
       <li><a href="gallery.html">Furniture</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -720,11 +769,11 @@ window.addEventListener("DOMContentLoaded", function() {
       <div class="bestseller-grid" id="bestsellerGrid">
         <div class="bestseller-item">
           <img src="https://m.media-amazon.com/images/I/81XQs+82MFL.jpg" alt="Wardrobe">
-          <p>Entery Door</p>
+          <p>Entry Door</p>
         </div>
         <div class="bestseller-item">
           <img src="https://5.imimg.com/data5/SELLER/Default/2023/3/294616885/RY/BU/NK/49306713/wooden-door-frame.jpg" alt="Wardrobe">
-          <p>Entery Door</p>
+          <p>Entry Door</p>
         </div>
         
         <div class="bestseller-item">
@@ -793,73 +842,7 @@ window.addEventListener("DOMContentLoaded", function() {
       <img src="https://static.vecteezy.com/system/resources/previews/002/387/457/large_2x/professional-carpenter-man-working-with-woodwork-industry-tool-construction-craftsman-person-workshop-with-timber-and-equipment-wood-work-free-photo.jpg" alt="Craftsmanship">
     </div>
   </section>
-
-<!-- Why Upendar Furnitures Section (No Bootstrap) -->
-<section class="why-upendar-section">
-  <div class="why-container">
-    <h2>Why Upendar Wood works?</h2>
-    <div class="why-features">
-      <div class="why-feature-box">
-        <i class="fas fa-truck"></i>
-        <h4>Fast Delivery</h4>
-        <p>Timely delivery across Telangana.</p>
-      </div>
-      <div class="why-feature-box">
-        <i class="fas fa-medal"></i>
-        <h4>Quality Guaranteed</h4>
-        <p>Premium Teak wood & polished finish with long-lasting durability.</p>
-      </div>
-      <div class="why-feature-box">
-        <i class="fas fa-users"></i>
-        <h4>Bulk Orders & Custom Designs</h4>
-        <p>Showroom supply & personalized designs.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<style>
-  .why-upendar-section {
-  background-color: #f8f9fa;
-  text-align: center;
-  padding-top: 20px;
-}
-.why-container {
-  max-width: 1100px;
-  margin: auto;
-}
-.why-container h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 40px;
-}
-.why-features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-.why-feature-box {
-  width: 320px;
-  padding: 25px;
-  border-radius: 12px;
-}
-.why-feature-box i {
-  font-size: 2.5rem;
-  color: #007bff;
-}
-.why-feature-box h4 {
-  margin-top: 15px;
-  font-size: 1.2rem;
-  color: #222;
-}
-.why-feature-box p {
-  font-size: 0.95rem;
-  color: #555;
-  margin-top: 10px;
-}
-</style>
-
+ 
 <!-- WhatsApp Contact Section -->
 <section class="whatsapp-contact py-5 bg-light">
   <div class="container text-center">
@@ -937,14 +920,13 @@ padding-bottom: 30px;
       <div class="footer-contact">
         <h3>Contact Us</h3>
         <p><i class="fa fa-phone"></i> +91 8096414441</p>
-        <p><i class="fa fa-envelope"></i> upendarfurnitures@gmail.com</p>
-        <p><i class="fa fa-map-marker-alt"></i> Chilkanagar road , uppal , Hyderabad, 500039</p>
+        <p><i class="fa fa-envelope"></i> upendarwoodworks@gmail.com</p>
+        <p><i class="fa fa-map-marker-alt"></i> Sai ram nagar colony , Chilkanagar road , uppal , Hyderabad, 500039</p>
       </div>
       <div class="footer-links">
         <h3>Quick Links</h3>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
           <li><a href="gallery.html">Furniture</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
