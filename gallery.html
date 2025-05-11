@@ -4,14 +4,102 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery - Upendar Furnitures</title>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery - Upendar Furnitures</title>
   <style>
-    * {
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #B71C1C;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .main-buttons, .sub-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .main-buttons button, .sub-buttons button {
+      padding: 10px 20px;
+      background-color: #B71C1C;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .sub-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      padding: 20px;
+    }
+    .image-grid img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .pagination {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .pagination button {
+      padding: 8px 16px;
+      margin: 0 5px;
+      border: none;
+      background-color: #B71C1C;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .pagination button.active {
+      background-color: #880E0E;
+    }
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .arrow-left {
+      left: 20px;
+    }
+    .arrow-right {
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+  <style>
+   * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -69,7 +157,6 @@
     .nav-links li a {
       color: #212121;
       text-decoration: none;
-      font-weight: 500;
       transition: color 0.3s;
     }
 
@@ -119,6 +206,7 @@
       flex-direction: column;
       align-items: center;
       animation: rollDown 0.8s ease-in-out;
+      padding-bottom: 10px;
     }
     .sub-buttons button {
       background-color: white;
@@ -145,8 +233,8 @@
       margin-top: 20px;
     }
     .image-grid img {
-      width: 200px;
-      height: 150px;
+      width: 300px;
+      height: 230px;
       object-fit: cover;
       border-radius: 8px;
       cursor: pointer;
@@ -177,7 +265,6 @@
       color: hsl(0, 0%, 50%);
       text-align: center;
       padding: 20px 0;
-      margin-top: auto;
     }
  
     .main-buttons button {
@@ -194,6 +281,7 @@
   padding: 40px 20px;
   display: flex;
   justify-content: center;
+  margin-top:180px ;
 }
 
 .footer-columns {
@@ -230,10 +318,6 @@
   text-decoration: underline;
 }
   </style>
-</head>
-
-   
-</head>
 <body>
   <nav class="navbar">
     <div class="logo">
@@ -242,52 +326,102 @@
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>   
+      <li class="dropdown">
+        About
+        <ul class="dropdown-menu">
+          <li><a href="company.html">Our Manufacturing Unit</a></li>
+          <li><a href="materials.html">Our Material and Quality</a></li>
+          <li><a href="facilities.html">Our Facilities</a></li>
+          <li><a href="advantages.html">Advantages of Our Product</a></li>
+        </ul>
+      </li>
+      <style>
+        /* Dropdown submenu on hover */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  min-width: 220px;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+  color: #212121;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f2f2f2;
+  color: #B71C1C;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+      </style>  
       <li><a href="gallery.html" class="active">Furniture</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <section class="gallery-section">
-    <h1>Furniture Catlog</h1>
-    <div class="main-buttons">
-      <button id="btn-sofa" onclick="toggleSub('sofa')">Sofa</button>
-      <button id="btn-beds" onclick="toggleSub('beds')">Beds</button>
-      <button id="btn-dining" onclick="toggleSub('dining')">Dining</button>
-      <button id="btn-doors" onclick="toggleSub('doors')">Doors</button>
-      
-    </div>
-  
-    <div id="sub-sofa" class="sub-buttons" style="display: none;">
-      <button onclick="showImages('recliners')">Sofa set</button>
-    </div>
-    <div id="sub-beds" class="sub-buttons" style="display: none;">
-      <button onclick="showImages('kingbeds')">King Size</button>
-      <button onclick="showImages('pandirimancham')">pandiri mancham</button>
-      <button onclick="showImages('double')">Double cots</button>
-    </div>
-    <div id="sub-dining" class="sub-buttons" style="display: none;">
-      <button onclick="showImages('Round Table')">Round Table</button>
-      <button onclick="showImages('Rectangle Table')">Rectangle Table</button>
-    </div>
-    <div id="sub-doors" class="sub-buttons" style="display: none;">
-      <button onclick="showImages('singledoors')">Single Doors</button>
-      <button onclick="showImages('doubledoors')">Double Doors</button>
-    </div>
-    <div id="sub-tables" class="sub-buttons"style="display: none;">
-      <button onclick="showImages('dressingtable')">Dressing Table</button>
-      <button onclick="showImages('desktable')">Desk Table</button>
+ <div class="catlog">
+  <h2>Furniture catloge</h2>
+ </div>
+ <style>
+  .catlog h2{
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+  }
+ </style>
 
-    </div>
-    
-    
+  <div class="main-buttons">
+    <button onclick="toggleSub('sofa')">Sofas</button>
+    <button onclick="toggleSub('beds')">Beds</button>
+    <button onclick="toggleSub('dining')">Dining Sets</button>
+    <button onclick="toggleSub('doors')">Doors</button>
+  </div>
 
-    <div id="image-container" class="image-grid"></div>
-  </section>
+  <div class="sub-buttons" id="sub-sofa" style="display: none">
+    <button onclick="showImages('loveseats')">Sofa set</button>
+  </div>
+  <div class="sub-buttons" id="sub-beds" style="display: none">
+    <button onclick="showImages('kingbeds')">King Beds</button>
+    <button onclick="showImages('pandirimancham')">pandiri mancham</button>
+  </div>
+  <div class="sub-buttons" id="sub-dining" style="display: none">
+    <button onclick="showImages('woodendining')">Wooden Dining</button>
+  </div>
+  <div class="sub-buttons" id="sub-doors" style="display: none">
+    <button onclick="showImages('Singledoors')">Single Doors</button>
+    <button onclick="showImages('doubledoors')">Doubledoors</button>
+  </div>
 
-  <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
-    <img id="lightbox-img" src="" alt="Full View">
+  <div id="image-container" class="image-grid"></div>
+  <div class="pagination" id="pagination"></div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="arrow arrow-left" onclick="changeImage(-1)">&#10094;</span>
+    <img id="lightbox-image" src="" alt="Full-size image">
+    <span class="arrow arrow-right" onclick="changeImage(1)">&#10095;</span>
   </div>
 
   <section class="footer-extra">
@@ -295,8 +429,8 @@
       <div class="footer-contact">
         <h3>Contact Us</h3>
         <p><i class="fa fa-phone"></i> +91 8096414441</p>
-        <p><i class="fa fa-envelope"></i> upendarfurnitures@gmail.com</p>
-        <p><i class="fa fa-map-marker-alt"></i> Chilkanagar road , uppal , Hyderabad , 500039</p>
+        <p><i class="fa fa-envelope"></i>upendarwoodworks@gmail.com</p>
+        <p><i class="fa fa-map-marker-alt"></i> Chilkanagar road , uppal , Hyderabad , 500039 </p>
       </div>
       <div class="footer-links">
         <h3>Quick Links</h3>
@@ -315,17 +449,24 @@
   <footer class="footer">
     <p>&copy; 2025 Upendar Furnitures. All rights reserved.</p>
   </footer>
+</body>
+</html>
+
 
   <script>
-    const allSubs = document.querySelectorAll('.sub-buttons');
-    const imageContainer = document.getElementById('image-container');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
+    const imageContainer = document.getElementById("image-container");
+    const paginationContainer = document.getElementById("pagination");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    let currentCategory = '';
+    let currentPage = 0;
+    const itemsPerPage = 9;
+    let currentImages = [];
 
     const images = {
-      recliners: [src="https://m.media-amazon.com/images/I/61he-o+iQ5L._AC_UF894,1000_QL80_.jpg" ,'images/image6.jpeg','https://ganpatiarts.com/cdn/shop/files/sofasethoney_2.jpg?v=1712142689',
-        'https://thetimberguy.com/cdn/shop/files/Contemporary-Sheesham-Wood-Sofa-set-Choose-your-combination.jpg?v=1683482939',
-        'https://5.imimg.com/data5/ANDROID/Default/2022/6/OW/CC/GW/155127573/prod-20220624-1909189065112527424403122-jpg-500x500.jpg',
+      
+      sectionals: [],
+      loveseats: ['https://5.imimg.com/data5/ANDROID/Default/2022/6/OW/CC/GW/155127573/prod-20220624-1909189065112527424403122-jpg-500x500.jpg',
         'https://5.imimg.com/data5/SELLER/Default/2023/9/341871448/XK/FX/YP/10852837/teak-wood-carved-sofa-set-500x500.jpg',
         'https://5.imimg.com/data5/SELLER/Default/2024/11/462852910/TZ/EG/FW/56119186/whatsapp-image-2024-11-04-at-10-55-17-am.jpeg',
         'https://tiimg.tistatic.com/fp/1/007/872/solid-comfortable-fine-finish-termite-resistance-brown-wooden-sofa--135.jpg',
@@ -348,9 +489,8 @@
         'https://m.media-amazon.com/images/I/81o4-w+PwsL._AC_UF1000,1000_QL80_.jpg',
         'https://5.imimg.com/data5/SELLER/Default/2023/8/334328254/FZ/LB/VQ/97842370/teak-wood-5-seater-complete-wooden-sofa-set.jpeg',
         'https://furnishiaa.com/cdn/shop/files/Solid_Wood_2_Seater_Sofa_For_Home_Office_-_Furnishiaa_-_-_-5995821.jpg?v=1732723589',
-      ],
-      sectionals: [''],
-      loveseats: [src="image16.jpeg"],
+        ],
+
 
       kingbeds: [src="image16.jpeg",
       src="image2.jpeg",
@@ -371,7 +511,6 @@
       src="bed 9.webp",
       src="bed 5.avif",
       src="bed 11.jpeg",
-
       'https://cdn.shopaccino.com/plusone/products/teak-look-656769_l.jpg',
       'https://woodsala.com/cdn/shop/files/IMG_0314_bc394857-110d-4fe8-8787-85f175c80c8b.jpg?v=1692682907',
       'https://tonyanmak.com/wp-content/uploads/2025/03/Cot-scaled.jpg',
@@ -400,11 +539,8 @@
       'https://i.pinimg.com/736x/ce/9d/5f/ce9d5f93a40418a6127c0b36f93d5e82.jpg',
       'https://m.media-amazon.com/images/I/51jpj5JkrSL._AC_.jpg',
       'https://5.imimg.com/data5/SELLER/Default/2023/10/350220093/UV/BN/HK/55305564/bed-4-poster-sheesham-500x500.jpg'
-
-
-
       ],
-      double: ['https://m.media-amazon.com/images/I/81kUyIUNOLL._AC_UF894,1000_QL80_.jpg',
+      queenbeds: ['https://m.media-amazon.com/images/I/81kUyIUNOLL._AC_UF894,1000_QL80_.jpg',
       'https://westcoasttimber.in/wp-content/uploads/2020/09/TW_SingleCot-ok.jpg',
       'https://ganpatiarts.com/cdn/shop/products/11-2_6321eee2-778b-4380-9fc2-e99548824309.jpg?v=1710313014&width=1214',
       'https://www.furniselan.com/cdn/shop/products/athens-sheesham-wood-single-size-bed-557167.jpg?v=1679739682',
@@ -428,17 +564,10 @@
       'https://mamtafurniture.com/cdn/shop/files/71gMcXWrnrL._SL1500.jpg?v=1720343886',
       'https://5.imimg.com/data5/SELLER/Default/2021/9/RR/FH/HV/68834177/61o-7cuhxol-sl1210--500x500.jpg',
       'https://5.imimg.com/data5/YY/LL/MD/SELLER-28688189/b29a.JPG',
-      'https://m.media-amazon.com/images/I/71aIJXj-h7S.jpg'
-
-
-
-
-
-
+      'https://m.media-amazon.com/images/I/71aIJXj-h7S.jpg',
       ],
-      'Round Table': ['https://bisonoffice-hha9bnekb2b3fuax.z03.azurefd.net/img/prods/large/223_plpo7sbrw.jpg',
+      woodendining:  ['https://bisonoffice-hha9bnekb2b3fuax.z03.azurefd.net/img/prods/large/223_plpo7sbrw.jpg',
       'https://www.nismaayadecor.in/cdn/shop/products/12120.jpg?v=1674117163',
-      'https://kalyanamfurniture.com/wp-content/uploads/2022/07/8948.jpeg',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpyHR9y-HNFihVC8DgP2ZxBrXicSakmbWN1oQGo90_UEdjvlUFqYgVU2nIa7P72BnCjnQ&usqp=CAU',
       'https://5.imimg.com/data5/ANDROID/Default/2023/9/345933621/SO/LI/CL/101466749/product-jpeg-500x500.jpg',
       'https://i.pinimg.com/736x/e8/1a/0f/e81a0f9d50ba1ea5f945f06427555640.jpg',
@@ -454,10 +583,7 @@
       'https://tiimg.tistatic.com/fp/2/007/198/circular-wooden-dining-table-239.jpg',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFo0tQztblO7IPdjlBPx2ee0LEDCvWBfMF6V23r8yB0yFgGuyQ8LQvaYCh89YoOLuS_yI&usqp=CAU',
       'https://foter.com/photos/420/wooden-pedestal-dining-table-with-leaf.jpeg',
-
-
-      ],
-      'Rectangle Table': [src="d1.jpg",
+      src="d1.jpg",
       src="d01.webp",
       src="d02.jpg",
       src="d2.webp",
@@ -474,10 +600,10 @@
       src="d14.jpg",
       src="d15.jpeg",
       src="d16.jpg",
-        
+
       ],
-      singledoors: ['https://images.jdmagicbox.com/quickquotes/images_main/teak-wood-carving-door-for-home-30mm-2223637329-tktdxgh8.jpg',
-      'https://m.media-amazon.com/images/I/515PE5fOHKL.jpg',
+      glassdining: [],
+      Singledoors: ['','https://m.media-amazon.com/images/I/515PE5fOHKL.jpg',
       'https://5.imimg.com/data5/SELLER/Default/2025/2/489161301/VI/EY/DJ/190307206/teak-wood-door-500x500.jpeg',
       'https://m.media-amazon.com/images/I/61awRt792qL._AC_UF1000,1000_QL80_.jpg',
       'https://i.pinimg.com/originals/79/e5/32/79e532dd793362aab0c33d1e411a7666.jpg',
@@ -503,7 +629,7 @@
       'https://i.pinimg.com/236x/40/a1/29/40a12983346acbf2a123bcdf00238be2.jpg',
 
       ],
-      doubledoors: ['https://5.imimg.com/data5/SELLER/Default/2022/2/YL/IU/BR/134780157/indian-teak-wood-main-door-500x500.jpg',
+      doubledoors: [
       'https://5.imimg.com/data5/ANDROID/Default/2022/1/BK/HC/DF/98470943/product-jpeg-500x500.jpg',
       'https://i.etsystatic.com/53568537/r/il/c04cdf/6183575459/il_570xN.6183575459_nbwj.jpg',
       'https://5.imimg.com/data5/MA/WB/GF/SELLER-40129818/pvc-waterproof-wooden-doors-in-dehradun-500x500.jpg',
@@ -529,62 +655,63 @@
       'https://5.imimg.com/data5/SELLER/Default/2023/8/334260248/YJ/PW/JH/193674938/cp-teak-wood-double-door.jpeg',
       'https://5.imimg.com/data5/SELLER/Default/2021/9/IG/IM/QR/127599491/wooden-home-main-door.jpg',
       'https://5.imimg.com/data5/SELLER/Default/2022/9/QB/HH/KL/119465075/indian-teak-wood-500x500.jpg',
-
-
-     
-
-      ],
-      dressingtable: ['https://foter.com/photos/420/wooden-pedestal-dining-table-with-leaf.jpeg']
+                 ],
+      designdoors: []
     };
 
-    function toggleSub(id) {
-      allSubs.forEach(sub => sub.style.display = 'none');
-      imageContainer.innerHTML = '';
-      document.getElementById('sub-' + id).style.display = 'flex';
+    function toggleSub(category) {
+      document.querySelectorAll('.sub-buttons').forEach(sub => sub.style.display = 'none');
+      document.getElementById('sub-' + category).style.display = 'flex';
     }
 
-    function showImages(key) {
-      imageContainer.innerHTML = '';
-      const imgs = images[key] || [];
-      imgs.forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.onclick = () => {
-          lightbox.style.display = 'flex';
-          lightboxImg.src = src;
+    function showImages(category) {
+      currentCategory = category;
+      currentPage = 0;
+      renderImages();
+    }
+
+    function renderImages() {
+      currentImages = images[currentCategory] || [];
+      const totalPages = Math.ceil(currentImages.length / itemsPerPage);
+      const start = currentPage * itemsPerPage;
+      const end = start + itemsPerPage;
+      const visible = currentImages.slice(start, end);
+
+      imageContainer.innerHTML = visible.map((src, index) => 
+        `<img src="${src}" onclick="openLightbox(${start + index})">`).join('');
+
+      paginationContainer.innerHTML = '';
+      for (let i = 0; i < totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i + 1;
+        btn.className = i === currentPage ? 'active' : '';
+        btn.onclick = () => {
+          currentPage = i;
+          renderImages();
         };
-        imageContainer.appendChild(img);
-      });
-      imageContainer.style.display = 'flex';
+        paginationContainer.appendChild(btn);
+      }
     }
 
-    
-window.onload = function() {
-  const params = new URLSearchParams(window.location.search);
-  const section = params.get('section');
-  
-  if (section) {
-    toggleSub(section);
-  }
-}
-function toggleSub(id) {
-  allSubs.forEach(sub => sub.style.display = 'none');
-  imageContainer.innerHTML = '';
+    function openLightbox(index) {
+      lightbox.style.display = 'flex';
+      lightboxImage.src = currentImages[index];
+      lightboxImage.dataset.index = index;
+    }
 
-  // Remove active from all buttons
-  document.querySelectorAll('.main-buttons button').forEach(btn => {
-    btn.classList.remove('active');
-  });
+    function changeImage(direction) {
+      let newIndex = parseInt(lightboxImage.dataset.index) + direction;
+      if (newIndex >= 0 && newIndex < currentImages.length) {
+        lightboxImage.src = currentImages[newIndex];
+        lightboxImage.dataset.index = newIndex;
+      }
+    }
 
-  // Add active to clicked button
-  const activeBtn = document.getElementById('btn-' + id);
-  if (activeBtn) {
-    activeBtn.classList.add('active');
-  }
-
-  document.getElementById('sub-' + id).style.display = 'flex';
-}
-
+    window.onclick = function(event) {
+      if (event.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    };
   </script>
 </body>
 </html>
