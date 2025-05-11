@@ -63,7 +63,6 @@
     .nav-links li a {
       color: #212121;
       text-decoration: none;
-      font-weight: 500;
       transition: color 0.3s;
     }
 
@@ -187,27 +186,83 @@
   </style>
 </head>
 <body>
-  <div class="navbar">
+  <nav class="navbar">
     <div class="logo">
-      <img src="Brown_Black_Simple_Sawmill_Logo-removebg-preview.png" alt="logo" />
+      <img src="Brown_Black_Simple_Sawmill_Logo-removebg-preview.png" alt="Logo">
       Upendar Wood works
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Furniture</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a class="active" href="contact.html">Contact</a></li>
-    </ul>
-  </div>
+      <li class="dropdown">
+        About
+        <ul class="dropdown-menu">
+          <li><a href="company.html">Our Manufacturing Unit</a></li>
+          <li><a href="materials.html">Our Material and Quality</a></li>
+          <li><a href="facilities.html">Our Facilities</a></li>
+          <li><a href="advantages.html">Advantages of Our Product</a></li>
+        </ul>
+      </li>
+      <style>
+        /* Dropdown submenu on hover */
+.dropdown {
+  position: relative;
+}
 
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  min-width: 220px;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+  color: #212121;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f2f2f2;
+  color: #B71C1C;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+      </style>  
+      <li><a href="gallery.html" class="">Furniture</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html" class="active" >Contact</a></li>
+    </ul>
+  </nav>
   <section class="contact-section">
     <div class="contact-info">
       <h3>Contact Details</h3>
       <div class="info-item"><i class="fas fa-user"></i> Upendar (Owner)</div>
       <div class="info-item"><i class="fas fa-phone"></i> +91-8096414441</div>
-      <div class="info-item"><i class="fas fa-envelope"></i> thilakteja9@gmail.com</div>
-      <div class="info-item"><i class="fas fa-map-marker-alt"></i>Chilkanagar road , Uppal , Hyderabad , 500036</div>
+      <div class="info-item"><i class="fas fa-envelope"></i> upendarwoodworks@gmail.com</div>
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+       P50, Sri Raghavendra Nagar Colony , chilkanagar road , Uppal , Hyderabad
+      </div>
+      <div class="info-item">
+    
+        <a href="https://maps.app.goo.gl/52JvqdXF39hBVzNw5" target="_blank">View in google maps https://maps.app.goo.gl/52JvqdXF39hBVzNw5 </a>
+      </div>
+      
       <div class="info-item"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM to 7:00 PM</div>
       <div class="whatsapp">
         <a href="https://wa.me/9177134674" class="whatsapp-float" target="_blank">
@@ -215,6 +270,35 @@
         </a>
        </div>
     </div>
+
+    <div class="download-btn-container text-center my-4">
+      <a href="Upendar (10).pdf" download class="btn btn-download">
+        📥 Download Brochure
+      </a>
+    </div>
+    <style>
+      .btn-download {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  }
+  
+  .btn-download:hover {
+  background-color: #218838;
+  text-decoration: none;
+  color: white;
+  }
+  
+  .download-btn-container {
+  margin-top: 20px;
+  padding-bottom: 30px;
+  }
+  </style>
 
     <div class="booking-form">
       <h2>Book an Appointment</h2>
