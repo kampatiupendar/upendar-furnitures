@@ -640,8 +640,7 @@ function searchProduct() {
             return;
         }
     }
-
-    alert("No results found!");
+  alert("No results found!");
 }
 
 
@@ -664,8 +663,22 @@ window.addEventListener("DOMContentLoaded", function() {
 
   // optional: Button click kuda already onclick vundhi, so adhi work chesthundi
 });
+const input = document.getElementById("searchInput");
 
+// Run search on Enter key press
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent form submit if inside a form
+    search(); // Call your custom function
+  }
+});
 
+function search() {
+  const query = input.value.trim();
+  if (query !== "") {
+    window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+  }
+}
 </script>   
 <style>
   .menu-toggle {
@@ -787,6 +800,7 @@ window.addEventListener("DOMContentLoaded", function() {
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    
   </header>
   <section class="hero" id="heroSection">
     <div class="hero-content" id="heroContent">
@@ -800,7 +814,7 @@ window.addEventListener("DOMContentLoaded", function() {
   <script>
     const heroData = [
   {
-    image:src="ONE.jpg",
+    image:src="ONE.JPG",
     title: " Upendar Wood Works",
     subtitle: " Crafting Elegance & Comfort for Every Home " 
   },
@@ -810,9 +824,7 @@ window.addEventListener("DOMContentLoaded", function() {
     subtitle: "Where Craft Meets Class"
   },
   {
-    image:src="four.jpg",
-    title: "Built to Last",
-    subtitle: "Furniture that fits your lifestyle"
+    image:src="qq.webp",
   }
 ];
 
